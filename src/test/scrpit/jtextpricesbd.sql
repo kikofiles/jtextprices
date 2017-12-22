@@ -58,7 +58,7 @@ CREATE TABLE acceso (
   IDAcceso INTEGER(3) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Identificador por tipo de Acceso',
   usuario_IDUsuario INTEGER(6) UNSIGNED NOT NULL,
   rol_IDRol INTEGER(3) UNSIGNED NOT NULL,
-  PRIMARY KEY USING BTREE (IDAcceso, usuario_IDUsuario, rol_IDRol),
+  PRIMARY KEY USING BTREE (IDAcceso),
   UNIQUE KEY IDAcceso USING BTREE (IDAcceso),
   KEY fk_acceso_usuario_idx USING BTREE (usuario_IDUsuario),
   KEY fk_acceso_rol1_idx USING BTREE (rol_IDRol),
@@ -116,7 +116,7 @@ CREATE TABLE logprecioproducto (
   tipoprecio_IDTipoPrecio INTEGER(1) UNSIGNED NOT NULL,
   PrecioPrevio DOUBLE(8,2) UNSIGNED NOT NULL COMMENT 'El Precio Anterior al cambio',
   NuevoPrecio DOUBLE(8,2) UNSIGNED NOT NULL COMMENT 'El nuevo precio registrado',
-  PRIMARY KEY USING BTREE (IDLog, usuario_IDUsuario, producto_IDProducto, tipoprecio_IDTipoPrecio),
+  PRIMARY KEY USING BTREE (IDLog),
   UNIQUE KEY IDLog USING BTREE (IDLog),
   KEY fk_logprecioproducto_usuario1_idx USING BTREE (usuario_IDUsuario),
   KEY fk_logprecioproducto_producto1_idx USING BTREE (producto_IDProducto),
@@ -135,7 +135,7 @@ CREATE TABLE tienda (
   `Nombre Tienda` VARCHAR(30) COLLATE latin1_spanish_ci NOT NULL COMMENT 'El Nombre de la Tienda',
   clasificaciontienda_IDClasificacionTienda INTEGER(1) UNSIGNED NOT NULL,
   Estatus INTEGER(1) UNSIGNED NOT NULL COMMENT 'Activo',
-  PRIMARY KEY USING BTREE (IDTienda, clasificaciontienda_IDClasificacionTienda),
+  PRIMARY KEY USING BTREE (IDTienda),
   UNIQUE KEY IDTienda USING BTREE (IDTienda),
   KEY fk_tienda_clasificaciontienda1_idx USING BTREE (clasificaciontienda_IDClasificacionTienda),
   CONSTRAINT fk_tienda_clasificaciontienda1 FOREIGN KEY (clasificaciontienda_IDClasificacionTienda) REFERENCES clasificaciontienda (IDClasificacionTienda) ON DELETE NO ACTION ON UPDATE CASCADE
@@ -157,7 +157,7 @@ CREATE TABLE precioproducto (
   usuario_IDUsuarioModifica INTEGER(6) UNSIGNED NOT NULL,
   FechaMod TIMESTAMP NULL DEFAULT NULL,
   Estatus INTEGER(1) NOT NULL COMMENT 'Activo?',
-  PRIMARY KEY USING BTREE (IDPrecioProducto, producto_IDProducto, tipoprecio_IDTipoPrecio, tienda_IDTienda, usuario_IDUsuarioAlta, usuario_IDUsuarioModifica),
+  PRIMARY KEY USING BTREE (IDPrecioProducto),
   UNIQUE KEY IDPrecioProducto USING BTREE (IDPrecioProducto),
   KEY fk_precioproducto_producto1_idx USING BTREE (producto_IDProducto),
   KEY fk_precioproducto_tipoprecio1_idx USING BTREE (tipoprecio_IDTipoPrecio),
@@ -200,7 +200,7 @@ COMMIT;
 INSERT INTO `tienda` (IDTienda, `Nombre Tienda`, clasificaciontienda_IDClasificacionTienda, Estatus) VALUES
   (1,'Centro',1,1),
   (2,'Chiconcuac',2,1),
-  (3,'Moroleón',2,1),
+  (3,'Moroleon',2,1),
   (4,'Zapotlanejo',2,1),
   (5,'Cruces',2,1);
 COMMIT;

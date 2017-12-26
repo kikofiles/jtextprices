@@ -1,5 +1,8 @@
 package com.quimera.corptextiljt.logger;
 
+import static com.quimera.corptextiljt.util.Constants.LOG_LEVEL;
+import org.apache.log4j.Logger;
+
 public class CustomLogger {
 
 	/**

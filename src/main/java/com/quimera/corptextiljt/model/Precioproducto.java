@@ -22,7 +22,7 @@ import javax.persistence.TemporalType;
 @Table(name = "precioproducto", catalog = "jtextpricesbd")
 public class Precioproducto implements java.io.Serializable {
 
-	private int idprecioProducto;
+	private Integer idprecioProducto;
 	private Usuario usuarioByUsuarioIdusuarioModifica;
 	private Tipoprecio tipoprecio;
 	private Usuario usuarioByUsuarioIdusuarioAlta;
@@ -31,14 +31,14 @@ public class Precioproducto implements java.io.Serializable {
 	private double precioProducto;
 	private Date fechaAlta;
 	private Date fechaMod;
-	private int estatus;
+	private Integer estatus;
 
 	public Precioproducto() {
 	}
 
 	public Precioproducto(Usuario usuarioByUsuarioIdusuarioModifica,
 			Tipoprecio tipoprecio, Usuario usuarioByUsuarioIdusuarioAlta,
-			Producto producto, Tienda tienda, double precioProducto, int estatus) {
+			Producto producto, Tienda tienda, double precioProducto, Integer estatus) {
 		this.usuarioByUsuarioIdusuarioModifica = usuarioByUsuarioIdusuarioModifica;
 		this.tipoprecio = tipoprecio;
 		this.usuarioByUsuarioIdusuarioAlta = usuarioByUsuarioIdusuarioAlta;
@@ -51,7 +51,7 @@ public class Precioproducto implements java.io.Serializable {
 	public Precioproducto(Usuario usuarioByUsuarioIdusuarioModifica,
 			Tipoprecio tipoprecio, Usuario usuarioByUsuarioIdusuarioAlta,
 			Producto producto, Tienda tienda, double precioProducto,
-			Date fechaAlta, Date fechaMod, int estatus) {
+			Date fechaAlta, Date fechaMod, Integer estatus) {
 		this.usuarioByUsuarioIdusuarioModifica = usuarioByUsuarioIdusuarioModifica;
 		this.tipoprecio = tipoprecio;
 		this.usuarioByUsuarioIdusuarioAlta = usuarioByUsuarioIdusuarioAlta;
@@ -66,11 +66,11 @@ public class Precioproducto implements java.io.Serializable {
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "IDPrecioProducto", unique = true, nullable = false)
-	public int getIdprecioProducto() {
+	public Integer getIdprecioProducto() {
 		return this.idprecioProducto;
 	}
 
-	public void setIdprecioProducto(int idprecioProducto) {
+	public void setIdprecioProducto(Integer idprecioProducto) {
 		this.idprecioProducto = idprecioProducto;
 	}
 
@@ -156,11 +156,11 @@ public class Precioproducto implements java.io.Serializable {
 	}
 
 	@Column(name = "Estatus", nullable = false)
-	public int getEstatus() {
+	public Integer getEstatus() {
 		return this.estatus;
 	}
 
-	public void setEstatus(int estatus) {
+	public void setEstatus(Integer estatus) {
 		this.estatus = estatus;
 	}
 

@@ -21,11 +21,11 @@ import javax.persistence.UniqueConstraint;
 @Table(name = "usuario", catalog = "jtextpricesbd", uniqueConstraints = @UniqueConstraint(columnNames = "NickName"))
 public class Usuario implements java.io.Serializable {
 
-	private int idusuario;
+	private Integer idusuario;
 	private String nickName;
 	private String password;
 	private String nombre;
-	private int estatus;
+	private Integer estatus;
 	private Set<Precioproducto> precioproductosForUsuarioIdusuarioAlta = new HashSet<Precioproducto>(0);
 	private Set<Precioproducto> precioproductosForUsuarioIdusuarioModifica = new HashSet<Precioproducto>(0);
 	private Set<Acceso> accesos = new HashSet<Acceso>(0);
@@ -34,7 +34,7 @@ public class Usuario implements java.io.Serializable {
 	public Usuario() {
 	}
 
-	public Usuario(String nickName, String password, String nombre, int estatus) {
+	public Usuario(String nickName, String password, String nombre, Integer estatus) {
 		this.nickName = nickName;
 		this.password = password;
 		this.nombre = nombre;
@@ -42,7 +42,7 @@ public class Usuario implements java.io.Serializable {
 	}
 
 	public Usuario(String nickName, String password, String nombre,
-			int estatus, Set<Precioproducto> precioproductosForUsuarioIdusuarioAlta,
+			Integer estatus, Set<Precioproducto> precioproductosForUsuarioIdusuarioAlta,
 			Set<Precioproducto> precioproductosForUsuarioIdusuarioModifica, Set<Acceso> accesos,
 			Set<Logprecioproducto> logprecioproductos) {
 		this.nickName = nickName;
@@ -58,11 +58,11 @@ public class Usuario implements java.io.Serializable {
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "IDUsuario", unique = true, nullable = false)
-	public int getIdusuario() {
+	public Integer getIdusuario() {
 		return this.idusuario;
 	}
 
-	public void setIdusuario(int idusuario) {
+	public void setIdusuario(Integer idusuario) {
 		this.idusuario = idusuario;
 	}
 
@@ -94,11 +94,11 @@ public class Usuario implements java.io.Serializable {
 	}
 
 	@Column(name = "Estatus", nullable = false)
-	public int getEstatus() {
+	public Integer getEstatus() {
 		return this.estatus;
 	}
 
-	public void setEstatus(int estatus) {
+	public void setEstatus(Integer estatus) {
 		this.estatus = estatus;
 	}
 

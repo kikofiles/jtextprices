@@ -19,7 +19,7 @@ import javax.persistence.Table;
 @Table(name = "acceso", catalog = "jtextpricesbd")
 public class Acceso implements java.io.Serializable {
 
-	private int idacceso;
+	private Integer idacceso;
 	private Rol rol;
 	private Usuario usuario;
 
@@ -34,11 +34,11 @@ public class Acceso implements java.io.Serializable {
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "IDAcceso", unique = true, nullable = false)
-	public int getIdacceso() {
+	public Integer getIdacceso() {
 		return this.idacceso;
 	}
 
-	public void setIdacceso(int idacceso) {
+	public void setIdacceso(Integer idacceso) {
 		this.idacceso = idacceso;
 	}
 

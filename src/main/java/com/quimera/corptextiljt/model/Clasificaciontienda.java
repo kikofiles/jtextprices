@@ -21,20 +21,20 @@ import javax.persistence.UniqueConstraint;
 @Table(name = "clasificaciontienda", catalog = "jtextpricesbd", uniqueConstraints = @UniqueConstraint(columnNames = "NombreClasificacionTienda"))
 public class Clasificaciontienda implements java.io.Serializable {
 
-	private int idclasificacionTienda;
+	private Integer idclasificacionTienda;
 	private String nombreClasificacionTienda;
-	private int estatus;
+	private Integer estatus;
 	private Set<Tienda> tiendas = new HashSet<Tienda>(0);;
 
 	public Clasificaciontienda() {
 	}
 
-	public Clasificaciontienda(String nombreClasificacionTienda, int estatus) {
+	public Clasificaciontienda(String nombreClasificacionTienda, Integer estatus) {
 		this.nombreClasificacionTienda = nombreClasificacionTienda;
 		this.estatus = estatus;
 	}
 
-	public Clasificaciontienda(String nombreClasificacionTienda, int estatus,
+	public Clasificaciontienda(String nombreClasificacionTienda, Integer estatus,
 			Set<Tienda> tiendas) {
 		this.nombreClasificacionTienda = nombreClasificacionTienda;
 		this.estatus = estatus;
@@ -44,11 +44,11 @@ public class Clasificaciontienda implements java.io.Serializable {
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "IDClasificacionTienda", unique = true, nullable = false)
-	public int getIdclasificacionTienda() {
+	public Integer getIdclasificacionTienda() {
 		return this.idclasificacionTienda;
 	}
 
-	public void setIdclasificacionTienda(int idclasificacionTienda) {
+	public void setIdclasificacionTienda(Integer idclasificacionTienda) {
 		this.idclasificacionTienda = idclasificacionTienda;
 	}
 
@@ -62,11 +62,11 @@ public class Clasificaciontienda implements java.io.Serializable {
 	}
 
 	@Column(name = "Estatus", nullable = false)
-	public int getEstatus() {
+	public Integer getEstatus() {
 		return this.estatus;
 	}
 
-	public void setEstatus(int estatus) {
+	public void setEstatus(Integer estatus) {
 		this.estatus = estatus;
 	}
 

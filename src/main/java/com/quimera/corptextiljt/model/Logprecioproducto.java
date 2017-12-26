@@ -22,7 +22,7 @@ import javax.persistence.TemporalType;
 @Table(name = "logprecioproducto", catalog = "jtextpricesbd")
 public class Logprecioproducto implements java.io.Serializable {
 
-	private int idlog;
+	private Integer idlog;
 	private Tipoprecio tipoprecio;
 	private Usuario usuario;
 	private Producto producto;
@@ -56,11 +56,11 @@ public class Logprecioproducto implements java.io.Serializable {
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "IDLog", unique = true, nullable = false)
-	public int getIdlog() {
+	public Integer getIdlog() {
 		return this.idlog;
 	}
 
-	public void setIdlog(int idlog) {
+	public void setIdlog(Integer idlog) {
 		this.idlog = idlog;
 	}
 

@@ -21,7 +21,7 @@ import javax.persistence.UniqueConstraint;
 @Table(name = "rol", catalog = "jtextpricesbd", uniqueConstraints = @UniqueConstraint(columnNames = "NombreRol"))
 public class Rol implements java.io.Serializable {
 
-	private int idrol;
+	private Integer idrol;
 	private String nombreRol;
 	private Set<Acceso> accesos = new HashSet<Acceso>(0);
 
@@ -40,11 +40,11 @@ public class Rol implements java.io.Serializable {
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "IDRol", unique = true, nullable = false)
-	public int getIdrol() {
+	public Integer getIdrol() {
 		return this.idrol;
 	}
 
-	public void setIdrol(int idrol) {
+	public void setIdrol(Integer idrol) {
 		this.idrol = idrol;
 	}
 

@@ -20,7 +20,7 @@ import javax.persistence.Table;
 @Table(name = "tipoprecio", catalog = "jtextpricesbd")
 public class Tipoprecio implements java.io.Serializable {
 
-	private int idtipoPrecio;
+	private Integer idtipoPrecio;
 	private String nombrePrecio;
 	private Set<Precioproducto> precioproductos = new HashSet<Precioproducto>(0);
 	private Set<Logprecioproducto> logprecioproductos = new HashSet<Logprecioproducto>(0);
@@ -42,11 +42,11 @@ public class Tipoprecio implements java.io.Serializable {
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "IDTipoPrecio", unique = true, nullable = false)
-	public int getIdtipoPrecio() {
+	public Integer getIdtipoPrecio() {
 		return this.idtipoPrecio;
 	}
 
-	public void setIdtipoPrecio(int idtipoPrecio) {
+	public void setIdtipoPrecio(Integer idtipoPrecio) {
 		this.idtipoPrecio = idtipoPrecio;
 	}
 

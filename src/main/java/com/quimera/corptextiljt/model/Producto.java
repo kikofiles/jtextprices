@@ -22,24 +22,24 @@ import javax.persistence.Table;
 @Table(name = "producto", catalog = "jtextpricesbd")
 public class Producto implements java.io.Serializable {
 
-	private int idproducto;
+	private Integer idproducto;
 	private String nombreProducto;
 	private Double ancho;
 	private Double rendimiento;
-	private int estatus;
+	private Integer estatus;
 	private Set<Precioproducto> precioproductos = new HashSet<Precioproducto>(0);
 	private Set<Logprecioproducto> logprecioproductos = new HashSet<Logprecioproducto>(0);
 
 	public Producto() {
 	}
 
-	public Producto(String nombreProducto, int estatus) {
+	public Producto(String nombreProducto, Integer estatus) {
 		this.nombreProducto = nombreProducto;
 		this.estatus = estatus;
 	}
 
 	public Producto(String nombreProducto, Double ancho, Double rendimiento,
-			int estatus, Set<Precioproducto> precioproductos, Set<Logprecioproducto> logprecioproductos) {
+			Integer estatus, Set<Precioproducto> precioproductos, Set<Logprecioproducto> logprecioproductos) {
 		this.nombreProducto = nombreProducto;
 		this.ancho = ancho;
 		this.rendimiento = rendimiento;
@@ -51,11 +51,11 @@ public class Producto implements java.io.Serializable {
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "IDProducto", unique = true, nullable = false)
-	public int getIdproducto() {
+	public Integer getIdproducto() {
 		return this.idproducto;
 	}
 
-	public void setIdproducto(int idproducto) {
+	public void setIdproducto(Integer idproducto) {
 		this.idproducto = idproducto;
 	}
 
@@ -87,11 +87,11 @@ public class Producto implements java.io.Serializable {
 	}
 
 	@Column(name = "Estatus", nullable = false)
-	public int getEstatus() {
+	public Integer getEstatus() {
 		return this.estatus;
 	}
 
-	public void setEstatus(int estatus) {
+	public void setEstatus(Integer estatus) {
 		this.estatus = estatus;
 	}
 

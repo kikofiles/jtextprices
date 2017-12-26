@@ -33,7 +33,7 @@ CREATE TABLE rol (
   UNIQUE KEY IDRol USING BTREE (IDRol),
   UNIQUE KEY NombreRol USING BTREE (NombreRol)
 ) ENGINE=InnoDB
-AUTO_INCREMENT=3 ROW_FORMAT=DYNAMIC CHARACTER SET 'latin1' COLLATE 'latin1_spanish_ci'
+AUTO_INCREMENT=1 ROW_FORMAT=DYNAMIC CHARACTER SET 'latin1' COLLATE 'latin1_spanish_ci'
 ;
 
 /* Structure for the `usuario` table :  */
@@ -43,14 +43,18 @@ CREATE TABLE usuario (
   NickName VARCHAR(20) COLLATE latin1_spanish_ci NOT NULL COMMENT 'Nombre de usuario en Sistema',
   Password VARCHAR(20) COLLATE latin1_spanish_ci NOT NULL COMMENT 'Contraseña del usuario',
   Nombre VARCHAR(40) COLLATE latin1_spanish_ci NOT NULL COMMENT 'Nombre Real del Usuario',
+  tienda_IDTienda INTEGER (2) UNSIGNED NOT NULL COMMENT 'fk: Tienda a la que pertenece',
   Estatus INTEGER(1) UNSIGNED NOT NULL DEFAULT 1 COMMENT 'Activo',
   PRIMARY KEY USING BTREE (IDUsuario),
   UNIQUE KEY IDUsuario USING BTREE (IDUsuario),
-  UNIQUE KEY NickName USING BTREE (NickName)
+  UNIQUE KEY NickName USING BTREE (NickName),
+  KEY fk_tienda_IDTienda_idx USING BTREE (tienda_IDTienda),
+  CONSTRAINT fk_tienda_IDTienda FOREIGN KEY (tienda_IDTienda) REFERENCES tienda (IDTienda) ON DELETE NO ACTION ON UPDATE CASCADE
 ) ENGINE=InnoDB
 AUTO_INCREMENT=1 ROW_FORMAT=DYNAMIC CHARACTER SET 'latin1' COLLATE 'latin1_spanish_ci'
 COMMENT='Informacion sobre el usuario que accesa al Sistema'
 ;
+
 
 /* Structure for the `acceso` table :  */
 
@@ -78,7 +82,7 @@ CREATE TABLE clasificaciontienda (
   UNIQUE KEY IDClasificacionTienda USING BTREE (IDClasificacionTienda),
   UNIQUE KEY NombreClasificacionTienda USING BTREE (NombreClasificacionTienda)
 ) ENGINE=InnoDB
-AUTO_INCREMENT=3 ROW_FORMAT=DYNAMIC CHARACTER SET 'latin1' COLLATE 'latin1_spanish_ci'
+AUTO_INCREMENT=1 ROW_FORMAT=DYNAMIC CHARACTER SET 'latin1' COLLATE 'latin1_spanish_ci'
 ;
 
 /* Structure for the `producto` table :  */
@@ -103,7 +107,7 @@ CREATE TABLE tipoprecio (
   PRIMARY KEY USING BTREE (IDTipoPrecio),
   UNIQUE KEY IDTipoPrecio USING BTREE (IDTipoPrecio)
 ) ENGINE=InnoDB
-AUTO_INCREMENT=4 ROW_FORMAT=DYNAMIC CHARACTER SET 'latin1' COLLATE 'latin1_spanish_ci'
+AUTO_INCREMENT=1 ROW_FORMAT=DYNAMIC CHARACTER SET 'latin1' COLLATE 'latin1_spanish_ci'
 ;
 
 /* Structure for the `logprecioproducto` table :  */
@@ -140,7 +144,7 @@ CREATE TABLE tienda (
   KEY fk_tienda_clasificaciontienda1_idx USING BTREE (clasificaciontienda_IDClasificacionTienda),
   CONSTRAINT fk_tienda_clasificaciontienda1 FOREIGN KEY (clasificaciontienda_IDClasificacionTienda) REFERENCES clasificaciontienda (IDClasificacionTienda) ON DELETE NO ACTION ON UPDATE CASCADE
 ) ENGINE=InnoDB
-AUTO_INCREMENT=6 ROW_FORMAT=DYNAMIC CHARACTER SET 'latin1' COLLATE 'latin1_spanish_ci'
+AUTO_INCREMENT=1 ROW_FORMAT=DYNAMIC CHARACTER SET 'latin1' COLLATE 'latin1_spanish_ci'
 COMMENT='\t'
 ;
 
@@ -173,35 +177,4 @@ CREATE TABLE precioproducto (
 AUTO_INCREMENT=1 ROW_FORMAT=DYNAMIC CHARACTER SET 'latin1' COLLATE 'latin1_spanish_ci'
 ;
 
-/* Data for the `rol` table  (LIMIT 0,500) */
-
-INSERT INTO `rol` (IDRol, NombreRol) VALUES
-  (1,'Administrador'),
-  (2,'Consultor');
-COMMIT;
-
-/* Data for the `clasificaciontienda` table  (LIMIT 0,500) */
-
-INSERT INTO `clasificaciontienda` (IDClasificacionTienda, NombreClasificacionTienda, Estatus) VALUES
-  (1,'Matriz',1),
-  (2,'Sucursal',1);
-COMMIT;
-
-/* Data for the `tipoprecio` table  (LIMIT 0,500) */
-
-INSERT INTO `tipoprecio` (IDTipoPrecio, NombrePrecio) VALUES
-  (1,'Por Rollo'),
-  (2,'Por Kilo'),
-  (3,'Por Metro');
-COMMIT;
-
-/* Data for the `tienda` table  (LIMIT 0,500) */
-
-INSERT INTO `tienda` (IDTienda, `Nombre Tienda`, clasificaciontienda_IDClasificacionTienda, Estatus) VALUES
-  (1,'Centro',1,1),
-  (2,'Chiconcuac',2,1),
-  (3,'Moroleon',2,1),
-  (4,'Zapotlanejo',2,1),
-  (5,'Cruces',2,1);
-COMMIT;
 

@@ -18,4 +18,10 @@ PropertyHelper props = null;
         }
 
 		String welcomeTitle = props.getKey("lbl.welcome.jtextPrices");
+		
+
+		// Login
+		String userName = props.getKey("lbl.login.name");
+		String userPassword=props.getKey("lbl.login.password");
+		
 

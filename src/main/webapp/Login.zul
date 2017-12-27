@@ -7,8 +7,8 @@
                 <column hflex="2" />
             </columns>
             <rows>
-                <row>Usuario : <textbox id="idTxtName" value="" /></row>
-                <row>Contraseña : <textbox id="idTxtPassword" type="password" /></row>
+                <row>${userName} <textbox id="idTxtName" value="" /></row>
+                <row>${userPassword} : <textbox id="idTxtPassword" type="password" /></row>
                 <row><cell sclass="loginCtl" colspan="2"><vlayout>
                     <button label="Submit" onClick="loginWindow.validaPassword()" width="100px"/>
                     <label id="mesg" />

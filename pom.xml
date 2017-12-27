@@ -67,13 +67,11 @@
       <artifactId>zkplus</artifactId>
       <version>${zk.version}</version>
     </dependency>
-<!--  	
-	<dependency>
+	<!--<dependency>
       <groupId>org.zkoss.zk</groupId>
       <artifactId>zcommon</artifactId>
       <version>${zk.version}</version>
-    </dependency>  
--->
+    </dependency>  -->
 
 <!-- Spring 3 dependencies -->
 <dependency>

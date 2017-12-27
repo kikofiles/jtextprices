@@ -1,0 +1,21 @@
+import com.quimera.corptextiljt.util.PropertyHelper;
+import com.quimera.corptextiljt.util.PropertyHelper.Languages;
+import com.quimera.corptextiljt.util.PropertyHelper.Bundle;
+import java.util.Locale;
+
+PropertyHelper props = null;
+
+		
+        if(session.getAttribute("locale") == null)
+        {
+            props = new PropertyHelper();
+            props.setMessagesBundle(props.setLanguageToLocale());
+            session.setAttribute("locale", props);
+        }
+        else
+        {
+            props = (PropertyHelper)session.getAttribute("locale");
+        }
+
+		String welcomeTitle = props.getKey("lbl.welcome.jtextPrices");
+

@@ -39,5 +39,6 @@
 		<mapping class="com.quimera.corptextiljt.model.Tienda" />
 		<mapping class="com.quimera.corptextiljt.model.Tipoprecio" />
 		<mapping class="com.quimera.corptextiljt.model.Usuario" />
+		<mapping class="com.quimera.corptextiljt.model.Rol" />
 	</session-factory>
 </hibernate-configuration>

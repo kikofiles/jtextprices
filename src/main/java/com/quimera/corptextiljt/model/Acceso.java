@@ -43,7 +43,7 @@ public class Acceso implements java.io.Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "rol_IDRol", nullable = false)
+	@JoinColumn(name = "IDRol", nullable = false)
 	public Rol getRol() {
 		return this.rol;
 	}

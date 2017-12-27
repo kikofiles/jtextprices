@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2013 International Maize and Wheat Improvement Center -->
-<!--    Licensed under the Apache License, Version 2.0 (the "License"); -->
-<!--    you may not use this file except in compliance with the License. -->
-<!--    You may obtain a copy of the License at -->
-<!--    http://www.apache.org/licenses/LICENSE-2.0 -->
-<!--    Unless required by applicable law or agreed to in writing, software -->
-<!--    distributed under the License is distributed on an "AS IS" BASIS, -->
-<!--    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. -->
-<!--    See the License for the specific language governing permissions and -->
-<!--    limitations under the License. -->
+<!-- Licensed under the Apache License, Version 2.0 (the "License"); -->
+<!-- you may not use this file except in compliance with the License. -->
+<!-- You may obtain a copy of the License at -->
+<!-- http://www.apache.org/licenses/LICENSE-2.0 -->
+<!-- Unless required by applicable law or agreed to in writing, software -->
+<!-- distributed under the License is distributed on an "AS IS" BASIS, -->
+<!-- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. -->
+<!-- See the License for the specific language governing permissions and -->
+<!-- limitations under the License. -->
 
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
@@ -19,27 +19,27 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
 		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd">
-    
-     <!--   <jee:jndi-lookup id="dataSource" jndi-name="jdbc/MyDBwheatCimmyt" />-->   
+
+	<!-- <jee:jndi-lookup id="dataSource" jndi-name="jdbc/MyDBwheatCimmyt" /> -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver">
 		</property>
 		<property name="url" value="jdbc:mysql://localhost:3306/jtextpricesbd">
 		</property>
-  		<property name="username" value="root"></property>
-        <property name="password" value="cimmyt"></property>
- 		</bean>
-	
-    <bean id="sessionFactory"
+		<property name="username" value="root"></property>
+		<property name="password" value="dbmanager"></property>
+	</bean>
+
+	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="configurationClass" value="org.hibernate.cfg.AnnotationConfiguration" />
-		<property name="configLocation" value="classpath:persistence.xml"/>
+		<property name="configLocation" value="classpath:persistence.xml" />
 	</bean>
 
 	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
-    	<property name="sessionFactory" ref="sessionFactory" />
-  	</bean>
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
 
-  <import resource="classpath:service.xml"/>
+	<import resource="classpath:service.xml" />
 </beans>

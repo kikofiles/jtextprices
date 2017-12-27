@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <!-- Copyright 2013 International Maize and Wheat Improvement Center -->
-<!--    Licensed under the Apache License, Version 2.0 (the "License"); -->
-<!--    you may not use this file except in compliance with the License. -->
-<!--    You may obtain a copy of the License at -->
-<!--    http://www.apache.org/licenses/LICENSE-2.0 -->
-<!--    Unless required by applicable law or agreed to in writing, software -->
-<!--    distributed under the License is distributed on an "AS IS" BASIS, -->
-<!--    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. -->
-<!--    See the License for the specific language governing permissions and -->
-<!--    limitations under the License. -->
+<!-- Licensed under the Apache License, Version 2.0 (the "License"); -->
+<!-- you may not use this file except in compliance with the License. -->
+<!-- You may obtain a copy of the License at -->
+<!-- http://www.apache.org/licenses/LICENSE-2.0 -->
+<!-- Unless required by applicable law or agreed to in writing, software -->
+<!-- distributed under the License is distributed on an "AS IS" BASIS, -->
+<!-- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. -->
+<!-- See the License for the specific language governing permissions and -->
+<!-- limitations under the License. -->
 
 <!DOCTYPE hibernate-configuration PUBLIC
 "-//Hibernate/Hibernate Configuration DTD//EN"
@@ -16,36 +16,28 @@
 
 <hibernate-configuration>
 	<session-factory>
-		
+
 		<property name="connection.pool_size">10</property>
 		<property name="show_sql">false</property>
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="hibernate.jdbc.batch_size">1000</property>
-		
+
 		<property name="hibernate.order_inserts">true</property>
 		<property name="hibernate.order_updates">true</property>
 		<property name="hibernate.jdbc.batch_versioned_data">true</property>
-		
+
 		<property name="hibernate.cache.use_second_level_cache">true</property>
 
-		<property name="hibernate.max_fetch_depth">10</property> 
+		<property name="hibernate.max_fetch_depth">10</property>
 
 		<!-- Mapping files -->
-		<mapping
-			class="com.quimera.corptextiljt.model.Acceso" />
-		<mapping
-			class="com.quimera.corptextiljt.model.Clasificaciontienda" />
-		<mapping
-			class="com.quimera.corptextiljt.model.Logprecioproducto" />
-		<mapping
-			class="com.quimera.corptextiljt.model.Precioproducto" />
-		<mapping
-			class="com.quimera.corptextiljt.model.Producto" />
-		<mapping
-			class="com.quimera.corptextiljt.model.Tienda" />
-		<mapping
-			class="com.quimera.corptextiljt.model.Tipoprecio" />
-		<mapping
-			class="com.quimera.corptextiljt.model.Usuario" />		
+		<mapping class="com.quimera.corptextiljt.model.Acceso" />
+		<mapping class="com.quimera.corptextiljt.model.Clasificaciontienda" />
+		<mapping class="com.quimera.corptextiljt.model.Logprecioproducto" />
+		<mapping class="com.quimera.corptextiljt.model.Precioproducto" />
+		<mapping class="com.quimera.corptextiljt.model.Producto" />
+		<mapping class="com.quimera.corptextiljt.model.Tienda" />
+		<mapping class="com.quimera.corptextiljt.model.Tipoprecio" />
+		<mapping class="com.quimera.corptextiljt.model.Usuario" />
 	</session-factory>
 </hibernate-configuration>

@@ -1,19 +1,31 @@
 <?page title="Accesoo Sistema" contentType="text/html;charset=UTF-8"?>
 <zk>
-<window title="Acceso Sistema" border="normal" id="loginWindow" use="com.quimera.corptextiljt.zk.ControlLogin" onCreate="">
-<grid sclass="loginGrid">
-            <columns>
-                <column hflex="1" />
-                <column hflex="2" />
-            </columns>
-            <rows>
-                <row>${userName} <textbox id="idTxtName" value="" /></row>
-                <row>${userPassword} : <textbox id="idTxtPassword" type="password" /></row>
-                <row><cell sclass="loginCtl" colspan="2"><vlayout>
-                    <button label="Submit" onClick="loginWindow.validaPassword()" width="100px"/>
-                    <label id="mesg" />
-                </vlayout></cell></row>
-            </rows>
-        </grid>
-</window>
+	<window title="Acceso Sistema" border="normal" id="loginWindow"
+		use="com.quimera.corptextiljt.zk.ControlLogin" onCreate="">
+		<grid sclass="loginGrid">
+			<columns>
+				<column hflex="1" />
+				<column hflex="2" />
+			</columns>
+			<rows>
+				<row>
+					${userName}
+					<textbox id="idTxtName" value="" />
+				</row>
+				<row>
+					${userPassword} :
+					<textbox id="idTxtPassword" type="password" />
+				</row>
+				<row>
+					<cell sclass="loginCtl" colspan="2">
+						<vlayout>
+							<button label="Submit" onClick="loginWindow.validaPassword()"
+								width="100px" />
+							<label id="mesg" />
+						</vlayout>
+					</cell>
+				</row>
+			</rows>
+		</grid>
+	</window>
 </zk>

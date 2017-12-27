@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<web-app id="WebApp_ID" 
+	xmlns="http://java.sun.com/xml/ns/javaee"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+       http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 
-<web-app id="WebApp_ID" version="2.4"
-	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
-
-<display-name>jtext_prices</display-name>
+	<display-name>jtext_prices</display-name>
 	<listener>
 		<description>
 		Used to cleanup when a session is destroyed</description>
@@ -28,10 +29,10 @@
 		The asynchronous update engine for ZK</description>
 		<servlet-name>auEngine</servlet-name>
 		<servlet-class>org.zkoss.zk.au.http.DHtmlUpdateServlet</servlet-class>
-		 <init-param>
-        	<param-name>extension0</param-name>
-        	<param-value>/view=com.cimmyt.zk.CustomAuDynaMediar</param-value>
-    	</init-param>
+		<init-param>
+			<param-name>extension0</param-name>
+			<param-value>/view=com.cimmyt.zk.CustomAuDynaMediar</param-value>
+		</init-param>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>zkLoader</servlet-name>
@@ -46,16 +47,12 @@
 		<url-pattern>/zkau/*</url-pattern>
 	</servlet-mapping>
 
-	
+
 	<welcome-file-list>
-	<!--  
-		<welcome-file>index.html</welcome-file>
-		<welcome-file>index.htm</welcome-file>
-		<welcome-file>index.jsp</welcome-file>
-		<welcome-file>default.html</welcome-file>
-		<welcome-file>default.htm</welcome-file>
-		<welcome-file>default.jsp</welcome-file>-->
-		<welcome-file>welcome.zul</welcome-file>
+		<!-- <welcome-file>index.html</welcome-file> <welcome-file>index.htm</welcome-file> 
+			<welcome-file>index.jsp</welcome-file> <welcome-file>default.html</welcome-file> 
+			<welcome-file>default.htm</welcome-file> <welcome-file>default.jsp</welcome-file> -->
+		<welcome-file>MainFrame.zul</welcome-file>
 	</welcome-file-list>
 
 	<context-param>

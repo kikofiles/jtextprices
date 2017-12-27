@@ -5,7 +5,7 @@
   <artifactId>jtextPrices</artifactId>
   
   <properties>
-        <zk.version>6.5.5</zk.version>
+        <zk.version>8.5.0</zk.version>
    </properties>
   
   
@@ -67,12 +67,13 @@
       <artifactId>zkplus</artifactId>
       <version>${zk.version}</version>
     </dependency>
+<!--  	
 	<dependency>
       <groupId>org.zkoss.zk</groupId>
       <artifactId>zcommon</artifactId>
       <version>${zk.version}</version>
     </dependency>  
-
+-->
 
 <!-- Spring 3 dependencies -->
 <dependency>

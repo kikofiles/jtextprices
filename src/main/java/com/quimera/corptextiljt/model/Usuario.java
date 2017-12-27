@@ -1,15 +1,19 @@
 package com.quimera.corptextiljt.model;
 
+import static javax.persistence.GenerationType.IDENTITY;
+
 // Generated Dec 23, 2017 11:54:35 AM by Hibernate Tools 4.0.0
 
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
@@ -22,6 +26,7 @@ import javax.persistence.UniqueConstraint;
 public class Usuario implements java.io.Serializable {
 
 	private Integer idusuario;
+	private Tienda tienda;
 	private String nickName;
 	private String password;
 	private String nombre;
@@ -34,17 +39,19 @@ public class Usuario implements java.io.Serializable {
 	public Usuario() {
 	}
 
-	public Usuario(String nickName, String password, String nombre, Integer estatus) {
+	public Usuario(Tienda tienda, String nickName, String password, String nombre, Integer estatus) {
+		this.tienda = tienda;
 		this.nickName = nickName;
 		this.password = password;
 		this.nombre = nombre;
 		this.estatus = estatus;
 	}
 
-	public Usuario(String nickName, String password, String nombre,
+	public Usuario(Tienda tienda, String nickName, String password, String nombre,
 			Integer estatus, Set<Precioproducto> precioproductosForUsuarioIdusuarioAlta,
 			Set<Precioproducto> precioproductosForUsuarioIdusuarioModifica, Set<Acceso> accesos,
 			Set<Logprecioproducto> logprecioproductos) {
+		this.tienda = tienda;
 		this.nickName = nickName;
 		this.password = password;
 		this.nombre = nombre;
@@ -140,4 +147,13 @@ public class Usuario implements java.io.Serializable {
 		this.logprecioproductos = logprecioproductos;
 	}
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "tienda_IDTienda", nullable = false)
+	public Tienda getTienda() {
+		return this.tienda;
+	}
+	
+	public void setTienda(Tienda tienda) {
+		this.tienda = tienda;
+	}
 }

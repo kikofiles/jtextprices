@@ -27,7 +27,7 @@ public class Tienda implements java.io.Serializable {
 	private String nombreTienda;
 	private Integer estatus;
 	private Set<Precioproducto> precioproductos = new HashSet<Precioproducto>(0);
-
+	private Set<Usuario> usuarios = new HashSet<Usuario>(0);
 	public Tienda() {
 	}
 
@@ -39,11 +39,12 @@ public class Tienda implements java.io.Serializable {
 	}
 
 	public Tienda(Clasificaciontienda clasificaciontienda, String nombreTienda,
-			Integer estatus, Set<Precioproducto> precioproductos) {
+			Integer estatus, Set<Precioproducto> precioproductos, Set<Usuario> usuarios) {
 		this.clasificaciontienda = clasificaciontienda;
 		this.nombreTienda = nombreTienda;
 		this.estatus = estatus;
 		this.precioproductos = precioproductos;
+		this.usuarios = usuarios;
 	}
 
 	@Id
@@ -94,4 +95,12 @@ public class Tienda implements java.io.Serializable {
 		this.precioproductos = precioproductos;
 	}
 
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "tienda")
+	public Set<Usuario> getUsuarios() {
+		return this.usuarios;
+	}
+	
+	public void setUsuarios(Set<Usuario> usuarios) {
+		this.usuarios = usuarios;
+	}
 }

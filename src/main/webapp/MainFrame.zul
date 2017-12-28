@@ -1,37 +1,39 @@
-<borderlayout height="450px">
-	<north title="North" maxsize="300" size="50%" splittable="true"
-		collapsible="true">
+<borderlayout height="700px">
+	<north maxsize="300" size="20%" splittable="false" collapsible="false" border = "0">
+	
 		<borderlayout>
-			<west title="West" size="25%" flex="true" maxsize="250"
-				splittable="true" collapsible="true">
-				<div style="background:#B8D335">
-					<label value="25%" style="color:white;font-size:50px" />
+			<west  size="20%" maxsize="250" splittable="false" collapsible="false" border="none">
+				<div align="center">
+					<label value="AQUI LOGO CORPOTEXTIL"
+						style="color:black;font-size:30px" />
 				</div>
 			</west>
-			<center border="none" flex="true">
-				<div style="background:#E6D92C">
-					<label value="25%" style="color:white;font-size:50px" />
+			<center border="none">
+				<div align="center" style="background:gray" >
+					<label value="NOMBRE SISTEMA"
+						style="color:white;font-size:50px" />
 				</div>
 			</center>
-			<east size="50%" border="none" flex="true">
-				<label value="Here is a non-border" style="color:gray;font-size:30px" />
+			<east size="20%" border="none" >
+<div align="center"><vlayout>
+				<label value="Login"
+					style="color:gray;font-size:30px" /> </vlayout></div>
 			</east>
 		</borderlayout>
 	</north>
-	<center border="0">
+	<center border="0" >
 		<borderlayout>
-			<west maxsize="600" size="30%" flex="true" border="0"
-				splittable="true">
-				<div style="background:#E6D92C">
-					<label value="30%" style="color:white;font-size:50px" />
+			<west  size="10%"  splittable="false" border="none">
+				<div>
 				</div>
 			</west>
-			<center>
-				<label value="Here is a border" style="color:gray;font-size:30px" />
+			<center border="none">
+<div align="Center">
+				<label value="AQUI SE DESPLIEGA LA INFORMACION"
+					style="color:gray;font-size:30px" /> </div>
 			</center>
-			<east title="East" size="30%" flex="true" collapsible="true">
-				<div style="background:#B8D335">
-					<label value="30%" style="color:white;font-size:50px" />
+			<east  size="10%" collapsible="false" border="none">
+				<div>
 				</div>
 			</east>
 		</borderlayout>

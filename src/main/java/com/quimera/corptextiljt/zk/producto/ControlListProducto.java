@@ -44,11 +44,9 @@ public class ControlListProducto extends Window{
 	}
 
 	private void loadItems (){
-		
 		List<Producto> list = serviceProducto.getListProducto(new Producto());
 		for (Producto producto : list)
-		loadProduct (producto);
-		
+		loadProduct (producto);	
 		idListProduct.setMold("paging");
 		idListProduct.setPageSize(Constants.SHOW_ROWS_LIST);
 	}
@@ -62,23 +60,27 @@ public class ControlListProducto extends Window{
 			boolean isSetTienda = false;
 			for (Precioproducto precioProducto : list){
 				if (!isSetTienda){
-					item.appendChild(new Listcell(precioProducto.getTienda().getNombreTienda()));
+					//item.appendChild(new Listcell(precioProducto.getTienda().getNombreTienda()));
+					//item.appendChild(new Listcell(""));
 					isSetTienda = true;
 				}
 				switch (precioProducto.getTipoprecio().getIdtipoPrecio()){
 				case 1 :
-					item.appendChild(new Listcell (String.valueOf(precioProducto.getPrecioProducto())));
+					item.appendChild(new Listcell (formatoDinero(String.valueOf(precioProducto.getPrecioProducto()))));
 					break;
 				case 2 :
-					item.appendChild(new Listcell (String.valueOf(precioProducto.getPrecioProducto())));
+					item.appendChild(new Listcell (formatoDinero(String.valueOf(precioProducto.getPrecioProducto()))));
 					break;
 				case 3 :
-					item.appendChild(new Listcell (String.valueOf(precioProducto.getPrecioProducto())));
+					item.appendChild(new Listcell (formatoDinero(String.valueOf(precioProducto.getPrecioProducto()))));
 					break;
 				}
 			}
 		}
 		idListProduct.appendChild(item);
-		
+	}
+	
+	private String formatoDinero (String elPrecio ) {
+		return elPrecio = "$ "+elPrecio.trim()+"0";
 	}
 }

@@ -4,7 +4,7 @@
 <zk>
 <zscript src="/scripts/locale.zk"/>
 <zscript src="/scripts/images.zk"/>
-<borderlayout height="800px">
+<borderlayout height="900px">
 	<north  splittable="true" collapsible="true" border ="10" height="120px">
 		<borderlayout>
 			<west  size="120px" splittable="false" collapsible="false" border="1" style="background:#94c8fa" vflex="1">
@@ -23,7 +23,7 @@
 			</center>
 			 <east size="120px" border="1" >
               <div align="center" style="background:#94c8fa" vflex="1">
-              	<vbox width="100%" align="center" pack="end" style="padding-top:65%">
+              	<vbox width="100%" align="center" pack="end" style="padding-top:65% ">
 					<hbox align="center" pack="end">
 						<label value=" Login " style="color:black;font-size:25px" />
 					</hbox>
@@ -32,7 +32,7 @@
 			</east>
 		</borderlayout>
 	</north>
-	<center border="0">
+	<center border="1">
 		<borderlayout>
 			<west  size="120px"  splittable="true" border="1" collapsible="true" style="background:#94c8fa" vflex="1">
 				<div height="100%">
@@ -61,7 +61,7 @@
 			</west>
 			<center border="none">
 				<div align="Center">
-					<label value="AQUI SE DESPLIEGA LA INFORMACION" style="color:gray;font-size:30px" /> 
+					<include src="/producto/list_producto.zul"/> 
 			   	</div>
 			</center>
 		</borderlayout>

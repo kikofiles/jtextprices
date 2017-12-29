@@ -1,8 +1,16 @@
-/* MySQL Workbench Forward Engineering */
+/* SQL Manager Lite for MySQL                              5.6.4.50082 */
+/* ------------------------------------------------------------------- */
+/* Host     : localhost                                                */
+/* Port     : 3306                                                     */
+/* Database : jtextpricesbd                                            */
 
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES 'latin1' */;
+
+SET FOREIGN_KEY_CHECKS=0;
 
 DROP DATABASE IF EXISTS jtextpricesbd;
 
@@ -12,16 +20,18 @@ CREATE DATABASE jtextpricesbd
 
 USE jtextpricesbd;
 
+SET sql_mode = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
+
 /* Dropping database objects */
 
 DROP TABLE IF EXISTS precioproducto;
-DROP TABLE IF EXISTS tienda;
 DROP TABLE IF EXISTS logprecioproducto;
 DROP TABLE IF EXISTS tipoprecio;
 DROP TABLE IF EXISTS producto;
-DROP TABLE IF EXISTS clasificaciontienda;
 DROP TABLE IF EXISTS acceso;
 DROP TABLE IF EXISTS usuario;
+DROP TABLE IF EXISTS tienda;
+DROP TABLE IF EXISTS clasificaciontienda;
 DROP TABLE IF EXISTS rol;
 
 /* Structure for the `rol` table :  */
@@ -32,42 +42,6 @@ CREATE TABLE rol (
   PRIMARY KEY USING BTREE (IDRol),
   UNIQUE KEY IDRol USING BTREE (IDRol),
   UNIQUE KEY NombreRol USING BTREE (NombreRol)
-) ENGINE=InnoDB
-AUTO_INCREMENT=1 ROW_FORMAT=DYNAMIC CHARACTER SET 'latin1' COLLATE 'latin1_spanish_ci'
-;
-
-/* Structure for the `usuario` table :  */
-
-CREATE TABLE usuario (
-  IDUsuario INTEGER(6) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Identificador Unico del Usuario',
-  NickName VARCHAR(20) COLLATE latin1_spanish_ci NOT NULL COMMENT 'Nombre de usuario en Sistema',
-  Password VARCHAR(20) COLLATE latin1_spanish_ci NOT NULL COMMENT 'Contraseña del usuario',
-  Nombre VARCHAR(40) COLLATE latin1_spanish_ci NOT NULL COMMENT 'Nombre Real del Usuario',
-  tienda_IDTienda INTEGER (2) UNSIGNED NOT NULL COMMENT 'fk: Tienda a la que pertenece',
-  Estatus INTEGER(1) UNSIGNED NOT NULL DEFAULT 1 COMMENT 'Activo',
-  PRIMARY KEY USING BTREE (IDUsuario),
-  UNIQUE KEY IDUsuario USING BTREE (IDUsuario),
-  UNIQUE KEY NickName USING BTREE (NickName),
-  KEY fk_tienda_IDTienda_idx USING BTREE (tienda_IDTienda),
-  CONSTRAINT fk_tienda_IDTienda FOREIGN KEY (tienda_IDTienda) REFERENCES tienda (IDTienda) ON DELETE NO ACTION ON UPDATE CASCADE
-) ENGINE=InnoDB
-AUTO_INCREMENT=1 ROW_FORMAT=DYNAMIC CHARACTER SET 'latin1' COLLATE 'latin1_spanish_ci'
-COMMENT='Informacion sobre el usuario que accesa al Sistema'
-;
-
-
-/* Structure for the `acceso` table :  */
-
-CREATE TABLE acceso (
-  IDAcceso INTEGER(3) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Identificador por tipo de Acceso',
-  usuario_IDUsuario INTEGER(6) UNSIGNED NOT NULL,
-  rol_IDRol INTEGER(3) UNSIGNED NOT NULL,
-  PRIMARY KEY USING BTREE (IDAcceso),
-  UNIQUE KEY IDAcceso USING BTREE (IDAcceso),
-  KEY fk_acceso_usuario_idx USING BTREE (usuario_IDUsuario),
-  KEY fk_acceso_rol1_idx USING BTREE (rol_IDRol),
-  CONSTRAINT fk_acceso_rol1 FOREIGN KEY (rol_IDRol) REFERENCES rol (IDRol) ON DELETE NO ACTION ON UPDATE CASCADE,
-  CONSTRAINT fk_acceso_usuario FOREIGN KEY (usuario_IDUsuario) REFERENCES usuario (IDUsuario) ON DELETE NO ACTION ON UPDATE CASCADE
 ) ENGINE=InnoDB
 AUTO_INCREMENT=1 ROW_FORMAT=DYNAMIC CHARACTER SET 'latin1' COLLATE 'latin1_spanish_ci'
 ;
@@ -85,11 +59,62 @@ CREATE TABLE clasificaciontienda (
 AUTO_INCREMENT=1 ROW_FORMAT=DYNAMIC CHARACTER SET 'latin1' COLLATE 'latin1_spanish_ci'
 ;
 
+/* Structure for the `tienda` table :  */
+
+CREATE TABLE tienda (
+  IDTienda INTEGER(2) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'IDentificador por Tienda',
+  Nombre_Tienda VARCHAR(30) COLLATE latin1_spanish_ci NOT NULL COMMENT 'El Nombre de la Tienda',
+  clasificaciontienda_IDClasificacionTienda INTEGER(1) UNSIGNED NOT NULL,
+  Estatus INTEGER(1) UNSIGNED NOT NULL COMMENT 'Activo',
+  PRIMARY KEY USING BTREE (IDTienda),
+  UNIQUE KEY IDTienda USING BTREE (IDTienda),
+  KEY fk_tienda_clasificaciontienda1_idx USING BTREE (clasificaciontienda_IDClasificacionTienda),
+  CONSTRAINT fk_tienda_clasificaciontienda1 FOREIGN KEY (clasificaciontienda_IDClasificacionTienda) REFERENCES clasificaciontienda (IDClasificacionTienda) ON DELETE NO ACTION ON UPDATE CASCADE
+) ENGINE=InnoDB
+AUTO_INCREMENT=1 ROW_FORMAT=DYNAMIC CHARACTER SET 'latin1' COLLATE 'latin1_spanish_ci'
+COMMENT='\t'
+;
+
+/* Structure for the `usuario` table :  */
+
+CREATE TABLE usuario (
+  IDUsuario INTEGER(6) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Identificador Unico del Usuario',
+  NickName VARCHAR(20) COLLATE latin1_spanish_ci NOT NULL COMMENT 'Nombre de usuario en Sistema',
+  Password VARCHAR(20) COLLATE latin1_spanish_ci NOT NULL COMMENT 'Contraseña del usuario',
+  Nombre VARCHAR(40) COLLATE latin1_spanish_ci NOT NULL COMMENT 'Nombre Real del Usuario',
+  tienda_IDTienda INTEGER(2) UNSIGNED NOT NULL COMMENT 'fk: Tienda a la que pertenece',
+  Estatus INTEGER(1) UNSIGNED NOT NULL DEFAULT 1 COMMENT 'Activo',
+  PRIMARY KEY USING BTREE (IDUsuario),
+  UNIQUE KEY IDUsuario USING BTREE (IDUsuario),
+  UNIQUE KEY NickName USING BTREE (NickName),
+  KEY fk_tienda_IDTienda_idx USING BTREE (tienda_IDTienda),
+  CONSTRAINT fk_tienda_IDTienda FOREIGN KEY (tienda_IDTienda) REFERENCES tienda (IDTienda) ON DELETE NO ACTION ON UPDATE CASCADE
+) ENGINE=InnoDB
+AUTO_INCREMENT=1 ROW_FORMAT=DYNAMIC CHARACTER SET 'latin1' COLLATE 'latin1_spanish_ci'
+COMMENT='Informacion sobre el usuario que accesa al Sistema'
+;
+
+/* Structure for the `acceso` table :  */
+
+CREATE TABLE acceso (
+  IDAcceso INTEGER(3) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Identificador por tipo de Acceso',
+  usuario_IDUsuario INTEGER(6) UNSIGNED NOT NULL,
+  IDRol INTEGER(3) UNSIGNED NOT NULL,
+  PRIMARY KEY USING BTREE (IDAcceso),
+  UNIQUE KEY IDAcceso USING BTREE (IDAcceso),
+  KEY fk_acceso_usuario_idx USING BTREE (usuario_IDUsuario),
+  KEY fk_acceso_rol1_idx USING BTREE (IDRol),
+  CONSTRAINT fk_acceso_rol1 FOREIGN KEY (IDRol) REFERENCES rol (IDRol) ON DELETE NO ACTION ON UPDATE CASCADE,
+  CONSTRAINT fk_acceso_usuario FOREIGN KEY (usuario_IDUsuario) REFERENCES usuario (IDUsuario) ON DELETE NO ACTION ON UPDATE CASCADE
+) ENGINE=InnoDB
+AUTO_INCREMENT=1 ROW_FORMAT=DYNAMIC CHARACTER SET 'latin1' COLLATE 'latin1_spanish_ci'
+;
+
 /* Structure for the `producto` table :  */
 
 CREATE TABLE producto (
   IDProducto INTEGER(8) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Identificacion de Producto',
-  `Nombre Producto` VARCHAR(40) COLLATE latin1_spanish_ci NOT NULL COMMENT 'Nombre del Producto',
+  Nombre_Producto VARCHAR(40) COLLATE latin1_spanish_ci NOT NULL COMMENT 'Nombre del Producto',
   Ancho DOUBLE(6,2) UNSIGNED DEFAULT NULL COMMENT 'El ancho de la tela',
   Rendimiento DOUBLE(6,2) UNSIGNED DEFAULT NULL COMMENT 'Metros para 1Kg',
   Estatus INTEGER(1) UNSIGNED NOT NULL DEFAULT 1 COMMENT 'Producto Activo',
@@ -132,22 +157,6 @@ CREATE TABLE logprecioproducto (
 AUTO_INCREMENT=1 ROW_FORMAT=DYNAMIC CHARACTER SET 'latin1' COLLATE 'latin1_spanish_ci'
 ;
 
-/* Structure for the `tienda` table :  */
-
-CREATE TABLE tienda (
-  IDTienda INTEGER(2) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'IDentificador por Tienda',
-  `Nombre Tienda` VARCHAR(30) COLLATE latin1_spanish_ci NOT NULL COMMENT 'El Nombre de la Tienda',
-  clasificaciontienda_IDClasificacionTienda INTEGER(1) UNSIGNED NOT NULL,
-  Estatus INTEGER(1) UNSIGNED NOT NULL COMMENT 'Activo',
-  PRIMARY KEY USING BTREE (IDTienda),
-  UNIQUE KEY IDTienda USING BTREE (IDTienda),
-  KEY fk_tienda_clasificaciontienda1_idx USING BTREE (clasificaciontienda_IDClasificacionTienda),
-  CONSTRAINT fk_tienda_clasificaciontienda1 FOREIGN KEY (clasificaciontienda_IDClasificacionTienda) REFERENCES clasificaciontienda (IDClasificacionTienda) ON DELETE NO ACTION ON UPDATE CASCADE
-) ENGINE=InnoDB
-AUTO_INCREMENT=1 ROW_FORMAT=DYNAMIC CHARACTER SET 'latin1' COLLATE 'latin1_spanish_ci'
-COMMENT='\t'
-;
-
 /* Structure for the `precioproducto` table :  */
 
 CREATE TABLE precioproducto (
@@ -177,4 +186,6 @@ CREATE TABLE precioproducto (
 AUTO_INCREMENT=1 ROW_FORMAT=DYNAMIC CHARACTER SET 'latin1' COLLATE 'latin1_spanish_ci'
 ;
 
-
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

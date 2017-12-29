@@ -59,7 +59,7 @@ public class Producto implements java.io.Serializable {
 		this.idproducto = idproducto;
 	}
 
-	@Column(name = "Nombre Producto", nullable = false, length = 40)
+	@Column(name = "Nombre_Producto", nullable = false, length = 40)
 	public String getNombreProducto() {
 		return this.nombreProducto;
 	}

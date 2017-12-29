@@ -68,7 +68,7 @@ public class Tienda implements java.io.Serializable {
 		this.clasificaciontienda = clasificaciontienda;
 	}
 
-	@Column(name = "Nombre Tienda", nullable = false, length = 30)
+	@Column(name = "Nombre_Tienda", nullable = false, length = 30)
 	public String getNombreTienda() {
 		return this.nombreTienda;
 	}

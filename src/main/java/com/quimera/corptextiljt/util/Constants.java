@@ -12,4 +12,11 @@ public class Constants {
 	public final static String LocaleSpanish = "MX";
 	public final static String LocaleEnglish = "US";
 	public final static String LOCALE_LANGUAGE = "locale";
+	
+	public final static int SHOW_ROWS_LIST = Integer.parseInt( propertyHelper.getKey( "show.rows.list", conf ).trim());	
+	
+	/////////// beans Spring 
+	
+	public static final String BEAN_SERVICE_PRODUCT = "serviceProducto";
+	public static final String BEAN_SERVICE_ACCESO = "serviceAcceso";
 }

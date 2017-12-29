@@ -1,0 +1,9 @@
+2017-12-28 18:05:26,567 [INFO ] @TestExecutionListeners is not present for class [class com.quimera.corptextiljt.service.TestServiceProducto]: using defaults.
+2017-12-28 18:05:26,867 [INFO ] Loading XML bean definitions from class path resource [context.xml]
+2017-12-28 18:05:27,329 [INFO ] Loading XML bean definitions from class path resource [dataAccess.xml]
+2017-12-28 18:05:27,388 [INFO ] Loading XML bean definitions from class path resource [service.xml]
+2017-12-28 18:05:27,422 [INFO ] Refreshing org.springframework.context.support.GenericApplicationContext@5858ba4b: startup date [Thu Dec 28 18:05:27 CST 2017]; root of context hierarchy
+2017-12-28 18:05:27,705 [INFO ] Loading properties file from class path resource [config.properties]
+2017-12-28 18:05:29,046 [INFO ] Building new Hibernate SessionFactory
+2017-12-28 18:05:39,808 [INFO ] Closing org.springframework.context.support.GenericApplicationContext@5858ba4b: startup date [Thu Dec 28 18:05:27 CST 2017]; root of context hierarchy
+2017-12-28 18:05:39,812 [INFO ] Closing Hibernate SessionFactory

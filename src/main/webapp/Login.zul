@@ -1,4 +1,4 @@
-<?page title="Accesoo Sistema" contentType="text/html;charset=UTF-8"?>
+<?page title="Acceso Sistema" contentType="text/html;charset=UTF-8"?>
 <zk>
 	<window title="Acceso Sistema" border="normal" id="loginWindow"
 		use="com.quimera.corptextiljt.zk.ControlLogin" onCreate="">

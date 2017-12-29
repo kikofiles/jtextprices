@@ -5,4 +5,16 @@ Contains variables that store the URL to images.
 		// IMAGES MainFrame.zul
 		String imgLogo = props.getKey("img.url.logo",Bundle.img).trim();
 		String imgLogo2 = props.getKey("img.url.logo2",Bundle.img).trim();
-
+		String imgTela = props.getKey("img.url.telaIco",Bundle.img).trim();
+		String imgUsuario = props.getKey("img.url.usuariosIco",Bundle.img).trim();
+		String imgBusqueda = props.getKey("img.url.busquedaIco",Bundle.img).trim();		
+		
+		String imgAdicionar = props.getKey("img.url.AdicionarIco",Bundle.img).trim();
+		String imgCambiar = props.getKey("img.url.CambiarIco",Bundle.img).trim();
+		String imgEliminar = props.getKey("img.url.EliminarIco",Bundle.img).trim();
+		String imgOk = props.getKey("img.url.OkIco",Bundle.img).trim();
+		String imgNoOk = props.getKey("img.url.NotOkIco",Bundle.img).trim();
+		String imgListadoPrecio = props.getKey("img.url.ListadoIco",Bundle.img).trim();
+		
+		
+		

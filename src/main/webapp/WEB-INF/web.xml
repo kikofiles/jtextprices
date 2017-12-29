@@ -31,7 +31,7 @@
 		<servlet-class>org.zkoss.zk.au.http.DHtmlUpdateServlet</servlet-class>
 		<init-param>
 			<param-name>extension0</param-name>
-			<param-value>/view=com.cimmyt.zk.CustomAuDynaMediar</param-value>
+			<param-value>/view=com.quimera.corptextiljt.zk.CustomAuDynaMediar</param-value>
 		</init-param>
 	</servlet>
 	<servlet-mapping>
@@ -46,15 +46,7 @@
 		<servlet-name>auEngine</servlet-name>
 		<url-pattern>/zkau/*</url-pattern>
 	</servlet-mapping>
-
-
-	<welcome-file-list>
-		<!-- <welcome-file>index.html</welcome-file> <welcome-file>index.htm</welcome-file> 
-			<welcome-file>index.jsp</welcome-file> <welcome-file>default.html</welcome-file> 
-			<welcome-file>default.htm</welcome-file> <welcome-file>default.jsp</welcome-file> -->
-		<welcome-file>MainFrame.zul</welcome-file>
-	</welcome-file-list>
-
+	
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>  
@@ -68,9 +60,13 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 
-
+	<welcome-file-list>
+		<!-- <welcome-file>index.html</welcome-file> <welcome-file>index.htm</welcome-file> 
+			<welcome-file>index.jsp</welcome-file> <welcome-file>default.html</welcome-file> 
+			<welcome-file>default.htm</welcome-file> <welcome-file>default.jsp</welcome-file> -->
+		<welcome-file>MainFrame.zul</welcome-file>
+	</welcome-file-list>
 	<session-config>
 		<session-timeout>30</session-timeout>
 	</session-config>
-
 </web-app>

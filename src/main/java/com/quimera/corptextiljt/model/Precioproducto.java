@@ -85,7 +85,7 @@ public class Precioproducto implements java.io.Serializable {
 		this.usuarioByUsuarioIdusuarioModifica = usuarioByUsuarioIdusuarioModifica;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "tipoprecio_IDTipoPrecio", nullable = false)
 	public Tipoprecio getTipoprecio() {
 		return this.tipoprecio;
@@ -116,7 +116,7 @@ public class Precioproducto implements java.io.Serializable {
 		this.producto = producto;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "tienda_IDTienda", nullable = false)
 	public Tienda getTienda() {
 		return this.tienda;

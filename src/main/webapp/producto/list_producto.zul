@@ -1,0 +1,19 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="Producto" border="normal" width="100%" height="100%" id="idWindowProducto"
+use="com.quimera.corptextiljt.zk.producto.ControlListProducto" onCreate="idWindowProducto.initContext()">
+ 
+ <listbox id="idListProduct"  pagingPosition="bottom"
+ sizedByContent="true" multiple="true"  width="100%"  height="100%" >
+   <listhead>
+    <listheader width="20%">Tela</listheader>
+    <listheader width="20%">Tienda</listheader>
+    <listheader width="20%">P. Rollo</listheader>
+    <listheader width="20%">P. Mayoreo</listheader>
+    <listheader width="20%">P. Menudeo</listheader>
+   </listhead>
+ 
+ </listbox>
+
+</window>
+</zk>

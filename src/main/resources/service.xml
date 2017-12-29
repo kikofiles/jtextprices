@@ -16,9 +16,24 @@
 		<property name="hibernateTemplate" ref="hibernateTemplate" />
 	</bean>
 
-	<bean id="serviceProject" class="com.quimera.corptextiljt.service.impl.ServiceAccesoImpl">
+	<bean id="productoDAO" class="com.quimera.corptextiljt.model.dao.impl.ProductoDAOImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="precioProductoDAO" class="com.quimera.corptextiljt.model.dao.impl.PrecioproductoDAOImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+
+
+	<bean id="serviceAcceso" class="com.quimera.corptextiljt.service.impl.ServiceAccesoImpl">
 		<property name="accesoDAO" ref="accesoDAO" />
 	</bean>
+
+	<bean id="serviceProducto" class="com.quimera.corptextiljt.service.impl.ServiceProductoImpl">
+		<property name="productoDAO" ref="productoDAO" />
+		<property name="precioProductoDAO" ref="precioProductoDAO" />
+		
+	</bean>
+
 
 	<bean
 		class="com.quimera.corptextiljt.service.context.SpringApplicationContext" />

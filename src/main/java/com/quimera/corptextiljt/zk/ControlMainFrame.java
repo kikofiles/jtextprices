@@ -27,7 +27,6 @@ public class ControlMainFrame extends Borderlayout{
 		
 		case 1:
 			//show list prices and products
-			
 			Include src = new Include("/producto/list_producto.zul");
 			container.appendChild(src);
 			idCenterMainFrame.appendChild(container);

@@ -8,6 +8,6 @@ public interface ProductoDAO {
 
 	public void add(Producto bean);
 	public void delete (Producto bean);
-	public List<Producto> getListAcceso (Producto bean);
+	public List<Producto> getListProducto (Producto bean);
 	public Producto getProducto (Producto bean);
 }

@@ -21,7 +21,7 @@ public class ProductoDAOImpl extends AbstractDAO<Producto, Integer> implements P
 	}
 
 	@Override
-	public List<Producto> getListAcceso(Producto bean) {
+	public List<Producto> getListProducto(Producto bean) {
 		
 		return super.getListByFilter(bean);
 	}

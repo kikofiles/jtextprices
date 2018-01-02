@@ -1,4 +1,4 @@
-<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<?page title="Listado" contentType="text/html;charset=UTF-8"?>
 <zk>
 
   	<style src="/style/listbox.css" dynamic="true" > </style> 

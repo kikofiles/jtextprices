@@ -6,9 +6,9 @@ import com.quimera.corptextiljt.model.Precioproducto;
 import com.quimera.corptextiljt.model.Producto;
 import com.quimera.corptextiljt.model.dao.PrecioproductoDAO;
 import com.quimera.corptextiljt.model.dao.ProductoDAO;
-import com.quimera.corptextiljt.service.ServiceProducto;
+import com.quimera.corptextiljt.service.ServicePrecioProducto;
 
-public class ServiceProductoImpl implements ServiceProducto{
+public class ServicePrecioProductoImpl implements ServicePrecioProducto{
 
 	private ProductoDAO productoDAO;
 	private PrecioproductoDAO precioProductoDAO;
@@ -18,10 +18,14 @@ public class ServiceProductoImpl implements ServiceProducto{
 		productoDAO.add(bean);
 		
 	}
+	
+	public void add(Precioproducto bean) {
+		precioProductoDAO.add(bean);
+	}
 
 	@Override
-	public void delete(Producto bean) {
-		productoDAO.delete(bean);
+	public void delete(Precioproducto bean) {
+		precioProductoDAO.delete(bean);
 		
 	}
 
@@ -42,8 +46,8 @@ public class ServiceProductoImpl implements ServiceProducto{
 		return precioProductoDAO.getLastPrecioProductoByTipo(bean, idProducto);
 	}
 
-	public void setProductoDAO(ProductoDAO productoDAO) {
-		this.productoDAO = productoDAO;
+	public void setPrecioproductoDAO(PrecioproductoDAO precioproductoDAO) {
+		this.precioProductoDAO = precioproductoDAO;
 	}
 
 	public void setPrecioProductoDAO(PrecioproductoDAO precioProductoDAO) {

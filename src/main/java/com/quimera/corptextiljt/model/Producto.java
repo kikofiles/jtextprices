@@ -22,6 +22,10 @@ import javax.persistence.Table;
 @Table(name = "producto", catalog = "jtextpricesbd")
 public class Producto implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer idproducto;
 	private String nombreProducto;
 	private Double ancho;

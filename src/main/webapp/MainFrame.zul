@@ -1,5 +1,5 @@
 
-<?page title="Listado Producto por Tienda" contentType="text/html;charset=UTF-8"?>
+<?page title=${titleMainFrame} contentType="text/html;charset=UTF-8"?>
 
 <zk>
 <zscript src="/scripts/locale.zk"/>
@@ -60,7 +60,9 @@
 					</menubar>
 				</div>
 			</west>
+
 			<center border="none" id="idCenterMainFrame">
+
 			</center>
 		</borderlayout>
 	</center>

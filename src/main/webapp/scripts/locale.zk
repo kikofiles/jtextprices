@@ -24,4 +24,7 @@ PropertyHelper props = null;
 		String userName = props.getKey("lbl.login.name");
 		String userPassword=props.getKey("lbl.login.password");
 		
+		//MainFrame
+		String titleMainFrame = props.getKey("lbl.mainframe.title");
+		
 

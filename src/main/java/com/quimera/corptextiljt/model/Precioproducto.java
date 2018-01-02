@@ -22,6 +22,10 @@ import javax.persistence.TemporalType;
 @Table(name = "precioproducto", catalog = "jtextpricesbd")
 public class Precioproducto implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer idprecioProducto;
 	private Usuario usuarioByUsuarioIdusuarioModifica;
 	private Tipoprecio tipoprecio;

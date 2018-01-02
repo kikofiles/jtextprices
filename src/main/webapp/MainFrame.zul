@@ -4,7 +4,7 @@
 <zk>
 <zscript src="/scripts/locale.zk"/>
 <zscript src="/scripts/images.zk"/>
-<borderlayout height="900px">
+<borderlayout height="900px" id="idBorMainFrame" use="com.quimera.corptextiljt.zk.ControlMainFrame" onCreate="idBorMainFrame.loadContext()">
 	<north  splittable="true" collapsible="true" border ="10" height="120px">
 		<borderlayout>
 			<west  size="120px" splittable="false" collapsible="false" border="1" style="background:#94c8fa" vflex="1">
@@ -47,7 +47,8 @@
 						</menu>
 						<menu label="Consulta" image="${imgBusqueda}">
 							<menupopup>
-								<menuitem label="Precios x Producto" image="${imgListadoPrecio}"/>
+								<menuitem label="Precios x Producto" image="${imgListadoPrecio}" onClick="idBorMainFrame.selectItemMenu(1)"/>
+								<menuitem label="Alta Producto" image="${imgListadoPrecio}" onClick="idBorMainFrame.selectItemMenu(2)"/>
 							</menupopup>
 						</menu>
 						<menu label="Usuarios" image="${imgUsuario}">
@@ -59,10 +60,10 @@
 					</menubar>
 				</div>
 			</west>
-			<center border="none">
+			<center border="none" id="idCenterMainFrame">
 				<div align="Center">
-					<include src="/producto/alta_producto.zul"/>
-<!--  					<include src="/producto/list_producto.zul"/> --> 
+<!--					<include src="/producto/alta_producto.zul"/>
+  					<include src="/producto/list_producto.zul"/> --> 
 			   	</div>
 			</center>
 		</borderlayout>

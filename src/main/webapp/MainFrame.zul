@@ -61,7 +61,7 @@
 			</west>
 			<center border="none">
 				<div align="Center">
-					<include src="AltaProducto.zul"/>
+					<include src="/producto/alta_producto.zul"/>
 <!--  					<include src="/producto/list_producto.zul"/> --> 
 			   	</div>
 			</center>

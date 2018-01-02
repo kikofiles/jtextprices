@@ -1,9 +1,9 @@
-2017-12-29 15:31:44,162 [INFO ] @TestExecutionListeners is not present for class [class com.quimera.corptextiljt.service.TestServiceProducto]: using defaults.
-2017-12-29 15:31:44,381 [INFO ] Loading XML bean definitions from class path resource [context.xml]
-2017-12-29 15:31:44,615 [INFO ] Loading XML bean definitions from class path resource [dataAccess.xml]
-2017-12-29 15:31:44,647 [INFO ] Loading XML bean definitions from class path resource [service.xml]
-2017-12-29 15:31:44,709 [INFO ] Refreshing org.springframework.context.support.GenericApplicationContext@100fc185: startup date [Fri Dec 29 15:31:44 CST 2017]; root of context hierarchy
-2017-12-29 15:31:44,928 [INFO ] Loading properties file from class path resource [config.properties]
-2017-12-29 15:31:45,899 [INFO ] Building new Hibernate SessionFactory
-2017-12-29 15:31:47,664 [INFO ] Closing org.springframework.context.support.GenericApplicationContext@100fc185: startup date [Fri Dec 29 15:31:44 CST 2017]; root of context hierarchy
-2017-12-29 15:31:47,680 [INFO ] Closing Hibernate SessionFactory
+2018-01-02 13:22:05,662 [INFO ] @TestExecutionListeners is not present for class [class com.quimera.corptextiljt.service.TestServiceProducto]: using defaults.
+2018-01-02 13:22:05,881 [INFO ] Loading XML bean definitions from class path resource [context.xml]
+2018-01-02 13:22:06,115 [INFO ] Loading XML bean definitions from class path resource [dataAccess.xml]
+2018-01-02 13:22:06,178 [INFO ] Loading XML bean definitions from class path resource [service.xml]
+2018-01-02 13:22:06,240 [INFO ] Refreshing org.springframework.context.support.GenericApplicationContext@100fc185: startup date [Tue Jan 02 13:22:06 CST 2018]; root of context hierarchy
+2018-01-02 13:22:06,412 [INFO ] Loading properties file from class path resource [config.properties]
+2018-01-02 13:22:07,209 [INFO ] Building new Hibernate SessionFactory
+2018-01-02 13:22:09,095 [INFO ] Closing org.springframework.context.support.GenericApplicationContext@100fc185: startup date [Tue Jan 02 13:22:06 CST 2018]; root of context hierarchy
+2018-01-02 13:22:09,111 [INFO ] Closing Hibernate SessionFactory

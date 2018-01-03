@@ -38,23 +38,22 @@
 				<div height="100%">
 					<menubar id="menubar" hflex="min" orient="vertical">
 						<custom-attributes org.zkoss.zul.image.preload="true" />
-						<menu label="Telas" image="${imgTela}">
+						<menu label="${menubarTextile}" image="${imgTela}">
 							<menupopup>
-								<menuitem image="${imgAdicionar}" label="Nuevo" />
-								<menuitem image="${imgCambiar}" label="Modificar" />
-								<menuitem image="${imgEliminar}" label="Eliminar" />
+								<menuitem image="${imgAdicionar}" label="${menubarTextileNew}" onClick="idBorMainFrame.selectItemMenu(2)"/>
+								<menuitem image="${imgCambiar}" label="${menubarTextileMod}" />
+								<menuitem image="${imgEliminar}" label="${menubarTextileDel}" />
 							</menupopup>
 						</menu>
-						<menu label="Consulta" image="${imgBusqueda}">
+						<menu label="${menubarQuery}" image="${imgBusqueda}">
 							<menupopup>
-								<menuitem label="Precios x Producto" image="${imgListadoPrecio}" onClick="idBorMainFrame.selectItemMenu(1)"/>
-								<menuitem label="Alta Producto" image="${imgListadoPrecio}" onClick="idBorMainFrame.selectItemMenu(2)"/>
+								<menuitem label="${menubarQuery1}" image="${imgListadoPrecio}" onClick="idBorMainFrame.selectItemMenu(1)"/>
 							</menupopup>
 						</menu>
-						<menu label="Usuarios" image="${imgUsuario}">
+						<menu label="${menubarUser}" image="${imgUsuario}">
 							<menupopup>
-								<menuitem image="${imgOk}" label="Nuevo"/>
-								<menuitem image="${imgNoOk}" label="Eliminar"/>
+								<menuitem image="${imgOk}" label="${menubarUserAdd}"/>
+								<menuitem image="${imgNoOk}" label="${menubarUserDel}"/>
 							</menupopup>
 						</menu>
 					</menubar>

@@ -26,5 +26,29 @@ PropertyHelper props = null;
 		
 		//MainFrame
 		String titleMainFrame = props.getKey("lbl.mainframe.title");
-		
-
+		String menubarTextile = props.getKey("lbl.mainframe.menubar.textile");
+		String menubarTextileNew = props.getKey("lbl.mainframe.menubar.textile.add");
+		String menubarTextileMod = props.getKey("lbl.mainframe.menubar.textile.modify");
+		String menubarTextileDel = props.getKey("lbl.mainframe.menubar.textile.delete");
+		String menubarQuery = props.getKey("lbl.mainframe.menubar.query");
+		String menubarQuery1 = props.getKey("lbl.mainframe.menubar.query.pricepershop");
+		String menubarUser = props.getKey("lbl.mainframe.menubar.user");
+		String menubarUserAdd = props.getKey("lbl.mainframe.menubar.user.add");
+		String menubarUserDel = props.getKey("lbl.mainframe.menubar.user.delete");
+		//Alta Producto
+		String altaproductoTitle = props.getKey("lbl.altaproducto.title");
+		String altaproductoProductName = props.getKey("lbl.altaproducto.product.name");
+		String altaproductoProductWide = props.getKey("lbl.altaproducto.product.wide");
+		String altaproductoProductOutput = props.getKey("lbl.altaproducto.product.output");
+		String altaproductoPricesDowntown = props.getKey("lbl.altaproducto.tienda.downtown");
+		String altaproductoPriceRoll = props.getKey("lbl.altaproducto.tienda.downtown.roll");
+		String altaproductoPriceWholesale = props.getKey("lbl.altaproducto.tienda.wholesale");
+		String altaproductoPriceRetail = props.getKey("lbl.altaproducto.tienda.retail");
+		String altaproductoPricesChico = props.getKey("lbl.altaproducto.tienda.chiconcuac");
+		String altaproductoPricesCruces = props.getKey("lbl.altaproducto.tienda.cruces");
+		String altaproductoPricesMoro = props.getKey("lbl.altaproducto.tienda.moroleon");
+		String altaproductoPricesZapo = props.getKey("lbl.altaproducto.tienda.zapotlanejo");
+		String altaproductoCheckLabel = props.getKey("lbl.altaproducto.check.label");
+		String altaproductoCheckOption = props.getKey("lbl.altaproducto.check.option");
+		String altaproductoBtnCancel = props.getKey("lbl.altaproducto.btn.cancel");
+		String altaproductoBtnSave = props.getKey("lbl.altaproducto.btn.save");

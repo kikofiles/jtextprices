@@ -1,79 +1,79 @@
-<?page title="Alta Producto" contentType="text/html;charset=UTF-8"?>
+<?page title=${altaproductoTitle} contentType="text/html;charset=UTF-8"?>
 <zk>
-<window title="Alta Producto" border="normal" width="100%" height="100%" id="idWindowAltaProducto"
+<window title="${altaproductoTitle}" border="normal" width="100%" height="100%" id="idWindowAltaProducto"
 use="com.quimera.corptextiljt.zk.producto.ControlAltaProducto" onCreate="idWindowAltaProducto.initializeContext()">
 <grid vflex="1">
 	<rows>
 		<row>
-			<cell colspan="2"  align="right"> <label value="Nombre Producto" width="150px"  /></cell>
+			<cell colspan="2"  align="right"> <label value="${altaproductoProductName}" width="150px"  /></cell>
 			<cell colspan="4"  align="left"> <textbox  width="400px" id="idNombreProducto"/></cell>
 		</row>
 		<row>
-			<label value="Ancho Producto:" />
-			<cell colspan="2"  align="left"><decimalbox format="###.##" id="idAnchoProducto" width="150px" /> Metros</cell>
-			<label value="Rendimiento:" />
-			<cell colspan="2"  align="left"><decimalbox format="###.##" id="idRendimientoProducto" width="150px" /> Metros x Kilo</cell>
+			<label value="${altaproductoProductWide}" />
+			<cell colspan="2"  align="left"><decimalbox format="###.##" id="idAnchoProducto" width="150px" /> Mts</cell>
+			<label value="${altaproductoProductOutput }" />
+			<cell colspan="2"  align="left"><decimalbox format="###.##" id="idRendimientoProducto" width="150px" /> Mts x Kg</cell>
 		</row>
 		<row>
-			<cell colspan="4"  align="left"><label value="Precios Centro:"/></cell>
-			<label value="Usar mismos Precios en todas la tiendas:"/>
-			<checkbox id="idCheckTodas" label="SÍ (Referencia Precios Centro)" onCheck="" />
+			<cell colspan="4"  align="left"><label value="${altaproductoPricesDowntown}"/></cell>
+			<label value="${altaproductoCheckLabel}"/>
+			<checkbox id="idCheckTodas" label="${altaproductoCheckOption}" onCheck="" />
 		</row>
 		<row>			
-			<cell align="right"><label value="Precio Rollo:"/></cell>
+			<cell align="right"><label value="${altaproductoPriceRoll}"/></cell>
 			<cell align="center">$ <decimalbox format="###.##"  width="100px" id="idPrecioRolloCentro" /> pesos</cell>
-			<cell align="right"><label value="Precio Mayoreo:"/></cell>
+			<cell align="right"><label value="${altaproductoPriceWholesale}"/></cell>
 			<cell align="center">$ <decimalbox format="###.##"  width="100px" id="idPrecioMayoreoCentro" /> pesos</cell>
-			<cell align="right"><label value="Precio Menudeo:"/></cell>
+			<cell align="right"><label value="${altaproductoPriceRetail}"/></cell>
 			<cell align="center">$ <decimalbox format="###.##"  width="100px" id="idPrecioMenudeoCentro"/> pesos</cell>			
 		</row>
 		<row>
-			<cell colspan="6"  align="left"><label value="Precios Chiconcuac:"/></cell>
+			<cell colspan="6"  align="left"><label value="${altaproductoPricesChico}"/></cell>
 		</row>
 		<row>			
-			<cell align="right"><label value="Precio Rollo:"/></cell>
+			<cell align="right"><label value="${altaproductoPriceRoll}"/></cell>
 			<cell align="center">$ <decimalbox format="###.##"  width="100px" id="idPrecioRolloChico" /> pesos</cell>
-			<cell align="right"><label value="Precio Mayoreo:"/></cell>
+			<cell align="right"><label value="${altaproductoPriceWholesale}"/></cell>
 			<cell align="center">$ <decimalbox format="###.##"  width="100px" id="idPrecioMayoreoChico" /> pesos</cell>
-			<cell align="right"><label value="Precio Menudeo:"/></cell>
+			<cell align="right"><label value="${altaproductoPriceRetail}"/></cell>
 			<cell align="center">$ <decimalbox format="###.##"  width="100px" id="idPrecioMenudeoChico"/> pesos</cell>			
 		</row>	
 		<row>
-			<cell colspan="6"  align="left"><label value="Precios Cruces"/></cell>
+			<cell colspan="6"  align="left"><label value="${altaproductoPricesCruces}"/></cell>
 		</row>
 		<row>			
-			<cell align="right"><label value="Precio Rollo:"/></cell>
+			<cell align="right"><label value="${altaproductoPriceRoll}"/></cell>
 			<cell align="center">$ <decimalbox format="###.##"  width="100px" id="idPrecioRolloCruces" /> pesos</cell>
-			<cell align="right"><label value="Precio Mayoreo:"/></cell>
+			<cell align="right"><label value="${altaproductoPriceWholesale}"/></cell>
 			<cell align="center">$ <decimalbox format="###.##"  width="100px" id="idPrecioMayoreoCruces" /> pesos</cell>
-			<cell align="right"><label value="Precio Menudeo:"/></cell>
+			<cell align="right"><label value="${altaproductoPriceRetail}"/></cell>
 			<cell align="center">$ <decimalbox format="###.##"  width="100px" id="idPrecioMenudeoCruces"/> pesos</cell>			
 		</row>	
 		<row>
-			<cell colspan="6"  align="left"><label value="Precios Moroleon:"/></cell>
+			<cell colspan="6"  align="left"><label value="${altaproductoPricesMoro}"/></cell>
 		</row>
 		<row>			
-			<cell align="right"><label value="Precio Rollo:"/></cell>
+			<cell align="right"><label value="${altaproductoPriceRoll}"/></cell>
 			<cell align="center">$ <decimalbox format="###.##"  width="100px" id="idPrecioRolloMoro" /> pesos</cell>
-			<cell align="right"><label value="Precio Mayoreo:"/></cell>
+			<cell align="right"><label value="${altaproductoPriceWholesale}"/></cell>
 			<cell align="center">$ <decimalbox format="###.##"  width="100px" id="idPrecioMayoreoMoro" /> pesos</cell>
-			<cell align="right"><label value="Precio Menudeo:"/></cell>
+			<cell align="right"><label value="${altaproductoPriceRetail}"/></cell>
 			<cell align="center">$ <decimalbox format="###.##"  width="100px" id="idPrecioMenudeoMoro"/> pesos</cell>			
 		</row>	
 		<row>
-			<cell colspan="6"  align="left"><label value="Precios Zapotlanejo:"/></cell>
+			<cell colspan="6"  align="left"><label value="${altaproductoPricesZapo}"/></cell>
 		</row>
 		<row>			
-			<cell align="right"><label value="Precio Rollo:"/></cell>
+			<cell align="right"><label value="${altaproductoPriceRoll}"/></cell>
 			<cell align="center">$ <decimalbox format="###.##"  width="100px" id="idPrecioRolloZapo" /> pesos</cell>
-			<cell align="right"><label value="Precio Mayoreo:"/></cell>
+			<cell align="right"><label value="${altaproductoPriceWholesale}"/></cell>
 			<cell align="center">$ <decimalbox format="###.##"  width="100px" id="idPrecioMayoreoZapo" /> pesos</cell>
-			<cell align="right"><label value="Precio Menudeo:"/></cell>
+			<cell align="right"><label value="${altaproductoPriceRetail}"/></cell>
 			<cell align="center">$ <decimalbox format="###.##"  width="100px" id="idPrecioMenudeoZapo"/> pesos</cell>			
 		</row>				
 		<row>
-			<cell colspan="3" align="right" > <button id="idBotonCancelar" label="Cancelar" onClick="" /></cell>
-			<cell colspan="3"> <button id="idBotonGuardar" label="Guardar" onClick="idWindowAltaProducto.guardaProducto()"/> </cell>
+			<cell colspan="3" align="right" > <button id="idBotonCancelar" label="${altaproductoBtnCancel}" onClick="" /></cell>
+			<cell colspan="3"> <button id="idBotonGuardar" label="${altaproductoBtnSave}" onClick="idWindowAltaProducto.guardaProducto()"/> </cell>
 		</row>
 	</rows>
 </grid>

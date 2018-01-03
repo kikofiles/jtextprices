@@ -19,7 +19,7 @@
 				<row>
 					<cell sclass="loginCtl" colspan="2">
 						<vlayout>
-							<button label="Submit" onClick="loginWindow.validaPassword()"
+							<button label="Entrar" onClick="loginWindow.validaPassword()"
 								width="100px" />
 							<label id="mesg" />
 						</vlayout>

@@ -50,9 +50,10 @@ public class ServicePrecioProductoImpl implements ServicePrecioProducto{
 		this.precioProductoDAO = precioproductoDAO;
 	}
 
-	public void setPrecioProductoDAO(PrecioproductoDAO precioProductoDAO) {
-		this.precioProductoDAO = precioProductoDAO;
+	public void setProductoDAO(ProductoDAO productoDAO) {
+		this.productoDAO = productoDAO;
 	}
+
 	
 	
 }

@@ -1,41 +1,42 @@
-<?page title="Alta Usuario" contentType="text/html;charset=UTF-8"?>
+<?page title=${altausuarioTitle} contentType="text/html;charset=UTF-8"?>
 <zk>
-<window title="Alta Usuario" border="normal" width="100%" height="100%">
+<window title="${altausuarioTitle}" border="normal" width="100%" height="100%" id="idWindowAltaUsuario"
+use="com.quimera.corptextiljt.zk.usuario.ControlAltaUsuario" onCreate="idWindowAltaUsuario.initializeContext()">
 <grid vflex="1">
 	<rows>
 		<row>
-			<label value="Nombre Completo Usuario:"  width="150px" />
-			<textbox id="idNombreUsuario" width="400px" />
+			<label value="${altausuarioName}"  width="150px" />
+			<textbox id="idNombreUsuario" width="400px" maxlength="40"/>
 		</row>
 		<row>
-			<label value="Usuario Sistema:"  width="150px" />
-			<textbox id="idUsuario" width="150px" />
+			<label value="${altausuarioNick}"  width="150px" />
+			<textbox id="idUsuario" width="150px" maxlength="20" />
 		</row>
 		<row>
-			<label value="Contraseña:" />
-			<textbox type="password" id="idPasswordUser" width="150px" />
+			<label value="${altausuarioPassword}" />
+			<textbox type="password" id="idPasswordUser" width="150px" maxlength="20"  />
 		</row>
 		<row>
-			<label value="Tipo de Usuario:"/>
-			<combobox>
-				<comboitem label="Administrador" value="1"/>
-				<comboitem label="Consultor" value="2"/>
+			<label value="${altausuarioType}" />
+			<combobox id="idTipoUsuario">
+				<comboitem label="${altausuarioTypeAdmin}" value="1"/>
+				<comboitem label="${altausuarioTypeCons}" value="2"/>
 			</combobox>
 		</row>
 		<row>
-			<label value="Sitio Asignado:"/>
-			<combobox>
-				<comboitem label="Todas las Tiendas" value="0" />
-				<comboitem label="Centro" value="1"/>
-				<comboitem label="Chiconcuac" value="2"/>
-				<comboitem label="Cruces" value="5"/>
-				<comboitem label="Moroleon" value="3"/>
-				<comboitem label="Zapotlanejo" value="4"/>
+			<label value="${altausuarioStore}"/>
+			<combobox id="idTiendaAsignada">
+				<comboitem label="${altausuarioStoreAll}" value="0" />
+				<comboitem label="${altausuarioStoreDowntown}" value="1"/>
+				<comboitem label="${altausuarioStoreChico}" value="2"/>
+				<comboitem label="${altausuarioStoreCruces}" value="5"/>
+				<comboitem label="${altausuarioStoreMoro}" value="3"/>
+				<comboitem label="${altausuarioStoreZapo}" value="4"/>
 			</combobox>
 		</row>
 		<row>
-			<cell align="right" > <button id="BotonCancelar" label="Cancelar" onClick="" /></cell>
-			<cell> <button id="BotonGuardar" label="Guardar" onClick="" /></cell>
+			<cell align="right" > <button id="idBotonCancelar" label="${altausuarioBtnCancel}" onClick="" /></cell>
+			<cell> <button id="idBotonGuardar" label="${altausuarioBtnSave}" onClick="" /></cell>
 		</row>
 	</rows>
 </grid>

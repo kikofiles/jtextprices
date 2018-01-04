@@ -6,7 +6,7 @@ use="com.quimera.corptextiljt.zk.producto.ControlAltaProducto" onCreate="idWindo
 	<rows>
 		<row>
 			<cell colspan="2"  align="right"> <label value="${altaproductoProductName}" width="150px"  /></cell>
-			<cell colspan="4"  align="left"> <textbox  width="400px" id="idNombreProducto"/></cell>
+			<cell colspan="4"  align="left"> <textbox  width="400px" id="idNombreProducto" maxlength="40"/></cell>
 		</row>
 		<row>
 			<cell align="right">  <label value="${altaproductoProductWide}" /></cell>

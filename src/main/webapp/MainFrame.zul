@@ -52,7 +52,7 @@
 						</menu>
 						<menu label="${menubarUser}" image="${imgUsuario}">
 							<menupopup>
-								<menuitem image="${imgOk}" label="${menubarUserAdd}"/>
+								<menuitem image="${imgOk}" label="${menubarUserAdd}" onClick="idBorMainFrame.selectItemMenu(3)"/>
 								<menuitem image="${imgNoOk}" label="${menubarUserDel}"/>
 							</menupopup>
 						</menu>

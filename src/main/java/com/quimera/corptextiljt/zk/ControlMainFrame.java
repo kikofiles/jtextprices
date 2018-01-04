@@ -37,6 +37,12 @@ public class ControlMainFrame extends Borderlayout{
 			container.appendChild(new Include("/producto/alta_producto.zul"));
 			idCenterMainFrame.appendChild(container);
 			break;
+			
+		case 3 :
+			//function to add new products by stores
+			container.appendChild(new Include("/usuarios/alta_usuario.zul"));
+			idCenterMainFrame.appendChild(container);
+			break;
 		}
 	}
 	

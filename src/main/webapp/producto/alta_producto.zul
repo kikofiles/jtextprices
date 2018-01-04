@@ -9,32 +9,32 @@ use="com.quimera.corptextiljt.zk.producto.ControlAltaProducto" onCreate="idWindo
 			<cell colspan="4"  align="left"> <textbox  width="400px" id="idNombreProducto"/></cell>
 		</row>
 		<row>
-			<label value="${altaproductoProductWide}" />
+			<cell align="right">  <label value="${altaproductoProductWide}" /></cell>
 			<cell colspan="2"  align="left"><decimalbox format="###.##" id="idAnchoProducto" width="150px" /> Mts</cell>
-			<label value="${altaproductoProductOutput }" />
+			<cell align="right"><label value="${altaproductoProductOutput }" /></cell>
 			<cell colspan="2"  align="left"><decimalbox format="###.##" id="idRendimientoProducto" width="150px" /> Mts x Kg</cell>
 		</row>
 		<row>
 			<cell colspan="4"  align="left"><label value="${altaproductoPricesDowntown}"/></cell>
-			<label value="${altaproductoCheckLabel}"/>
-			<checkbox id="idCheckTodas" label="${altaproductoCheckOption}" onCheck="" />
+			<cell align="right"><label value="${altaproductoCheckLabel}"/></cell>
+			<checkbox id="idCheckTodas" label="${altaproductoCheckOption}" onCheck="idWindowAltaProducto.habilitaDeshabilita()" />
 		</row>
 		<row>			
 			<cell align="right"><label value="${altaproductoPriceRoll}"/></cell>
-			<cell align="center">$ <decimalbox format="###.##"  width="100px" id="idPrecioRolloCentro" /> pesos</cell>
+			<cell align="center">$ <decimalbox format="###.##"  width="100px" id="idPrecioRolloCentro" onChange="idWindowAltaProducto.checaTipoPrecio(1)" /> pesos</cell>
 			<cell align="right"><label value="${altaproductoPriceWholesale}"/></cell>
-			<cell align="center">$ <decimalbox format="###.##"  width="100px" id="idPrecioMayoreoCentro" /> pesos</cell>
+			<cell align="center">$ <decimalbox format="###.##"  width="100px" id="idPrecioMayoreoCentro" onChange="idWindowAltaProducto.checaTipoPrecio(2)" /> pesos</cell>
 			<cell align="right"><label value="${altaproductoPriceRetail}"/></cell>
-			<cell align="center">$ <decimalbox format="###.##"  width="100px" id="idPrecioMenudeoCentro"/> pesos</cell>			
+			<cell align="center">$ <decimalbox format="###.##"  width="100px" id="idPrecioMenudeoCentro" onChange="idWindowAltaProducto.checaTipoPrecio(3)"/> pesos</cell>			
 		</row>
 		<row>
 			<cell colspan="6"  align="left"><label value="${altaproductoPricesChico}"/></cell>
 		</row>
 		<row>			
 			<cell align="right"><label value="${altaproductoPriceRoll}"/></cell>
-			<cell align="center">$ <decimalbox format="###.##"  width="100px" id="idPrecioRolloChico" /> pesos</cell>
+			<cell align="center">$ <decimalbox format="###.##"  width="100px" id="idPrecioRolloChico"   /> pesos</cell>
 			<cell align="right"><label value="${altaproductoPriceWholesale}"/></cell>
-			<cell align="center">$ <decimalbox format="###.##"  width="100px" id="idPrecioMayoreoChico" /> pesos</cell>
+			<cell align="center">$ <decimalbox format="###.##"  width="100px" id="idPrecioMayoreoChico"  /> pesos</cell>
 			<cell align="right"><label value="${altaproductoPriceRetail}"/></cell>
 			<cell align="center">$ <decimalbox format="###.##"  width="100px" id="idPrecioMenudeoChico"/> pesos</cell>			
 		</row>	

@@ -79,7 +79,129 @@ public class ControlAltaProducto extends Window{
 		idBtnGuardar = (Button) getFellow("idBotonCancelar");
 	}
 	
+	// Copia el Precio del Centro si será el mismo para todas las tiendas....
+	public void checaTipoPrecio(int i) {
+		switch (i){
+		case 1 :
+			if (idDcmPrecioRolloCentro.getValue().compareTo(new BigDecimal("0.00"))>0) {
+				if (idChbCheckTodas.isChecked()) {
+					idDcmPrecioRolloChico.setValue(idDcmPrecioRolloCentro.getValue());
+					idDcmPrecioRolloCruces.setValue(idDcmPrecioRolloCentro.getValue());
+					idDcmPrecioRolloMoro.setValue(idDcmPrecioRolloCentro.getValue());
+					idDcmPrecioRolloZapo.setValue(idDcmPrecioRolloCentro.getValue());
+				}
+			}
+			break;
+		case 2 :
+			if (idDcmPrecioMayoreoCentro.getValue().compareTo(new BigDecimal("0.00"))>0) {
+				if (idChbCheckTodas.isChecked()) {
+					idDcmPrecioMayoreoChico.setValue(idDcmPrecioMayoreoCentro.getValue());
+					idDcmPrecioMayoreoCruces.setValue(idDcmPrecioMayoreoCentro.getValue());
+					idDcmPrecioMayoreoMoro.setValue(idDcmPrecioMayoreoCentro.getValue());
+					idDcmPrecioMayoreoZapo.setValue(idDcmPrecioMayoreoCentro.getValue());
+				}
+			}
+			break;
+		case 3 :
+			if (idDcmPrecioMenudeoCentro.getValue().compareTo(new BigDecimal("0.00"))>0) {
+				if (idChbCheckTodas.isChecked()) {
+					idDcmPrecioMenudeoChico.setValue(idDcmPrecioMenudeoCentro.getValue());
+					idDcmPrecioMenudeoCruces.setValue(idDcmPrecioMenudeoCentro.getValue());
+					idDcmPrecioMenudeoMoro.setValue(idDcmPrecioMenudeoCentro.getValue());
+					idDcmPrecioMenudeoZapo.setValue(idDcmPrecioMenudeoCentro.getValue());
+				}
+			}
+			break;
+		}
+	}
 	
+	// Se encarga de habilitar o deshabilitar la entrada de precios de acuerdo al tipo de asignacion de precio
+	public void habilitaDeshabilita() {
+		if(idChbCheckTodas.isChecked()){
+			if(idDcmPrecioRolloCentro.getValue()!= null) {
+				if (idDcmPrecioRolloCentro.getValue().compareTo(new BigDecimal("0.00"))>0) {
+					idDcmPrecioRolloChico.setValue(idDcmPrecioRolloCentro.getValue());					
+					idDcmPrecioRolloCruces.setValue(idDcmPrecioRolloCentro.getValue());
+					idDcmPrecioRolloMoro.setValue(idDcmPrecioRolloCentro.getValue());
+					idDcmPrecioRolloZapo.setValue(idDcmPrecioRolloCentro.getValue());
+				}
+			}
+			else {
+				idDcmPrecioRolloChico.setValue(new BigDecimal("0.00"));
+				idDcmPrecioRolloCruces.setValue(new BigDecimal("0.00"));
+				idDcmPrecioRolloMoro.setValue(new BigDecimal("0.00"));
+				idDcmPrecioRolloZapo.setValue(new BigDecimal("0.00"));
+			}			
+			idDcmPrecioRolloChico.setDisabled(true);
+			idDcmPrecioRolloCruces.setDisabled(true);
+			idDcmPrecioRolloMoro.setDisabled(true);
+			idDcmPrecioRolloZapo.setDisabled(true);
+			if(idDcmPrecioMayoreoCentro.getValue()!= null) {
+				if (idDcmPrecioMayoreoCentro.getValue().compareTo(new BigDecimal("0.00"))>0) {
+					idDcmPrecioMayoreoChico.setValue(idDcmPrecioMayoreoCentro.getValue());					
+					idDcmPrecioMayoreoCruces.setValue(idDcmPrecioMayoreoCentro.getValue());
+					idDcmPrecioMayoreoMoro.setValue(idDcmPrecioMayoreoCentro.getValue());
+					idDcmPrecioMayoreoZapo.setValue(idDcmPrecioMayoreoCentro.getValue());
+				}
+			}
+			else {
+				idDcmPrecioMayoreoChico.setValue(new BigDecimal("0.00"));
+				idDcmPrecioMayoreoCruces.setValue(new BigDecimal("0.00"));
+				idDcmPrecioMayoreoMoro.setValue(new BigDecimal("0.00"));
+				idDcmPrecioMayoreoZapo.setValue(new BigDecimal("0.00"));
+			}			
+			idDcmPrecioMayoreoChico.setDisabled(true);
+			idDcmPrecioMayoreoCruces.setDisabled(true);
+			idDcmPrecioMayoreoMoro.setDisabled(true);
+			idDcmPrecioMayoreoZapo.setDisabled(true);
+			if(idDcmPrecioMenudeoCentro.getValue()!= null) {
+				if (idDcmPrecioMenudeoCentro.getValue().compareTo(new BigDecimal("0.00"))>0) {
+					idDcmPrecioMenudeoChico.setValue(idDcmPrecioMenudeoCentro.getValue());					
+					idDcmPrecioMenudeoCruces.setValue(idDcmPrecioMenudeoCentro.getValue());
+					idDcmPrecioMenudeoMoro.setValue(idDcmPrecioMenudeoCentro.getValue());
+					idDcmPrecioMenudeoZapo.setValue(idDcmPrecioMenudeoCentro.getValue());
+				}
+			}
+			else {
+				idDcmPrecioMenudeoChico.setValue(new BigDecimal("0.00"));
+				idDcmPrecioMenudeoCruces.setValue(new BigDecimal("0.00"));
+				idDcmPrecioMenudeoMoro.setValue(new BigDecimal("0.00"));
+				idDcmPrecioMenudeoZapo.setValue(new BigDecimal("0.00"));
+			}			
+			idDcmPrecioMenudeoChico.setDisabled(true);
+			idDcmPrecioMenudeoCruces.setDisabled(true);
+			idDcmPrecioMenudeoMoro.setDisabled(true);
+			idDcmPrecioMenudeoZapo.setDisabled(true);
+		}
+		else {
+			idDcmPrecioRolloChico.setDisabled(false);
+			idDcmPrecioMayoreoChico.setDisabled(false);			
+			idDcmPrecioMenudeoChico.setDisabled(false);			
+			idDcmPrecioRolloCruces.setDisabled(false);
+			idDcmPrecioMayoreoCruces.setDisabled(false);
+			idDcmPrecioMenudeoCruces.setDisabled(false);
+			idDcmPrecioRolloMoro.setDisabled(false);
+			idDcmPrecioMayoreoMoro.setDisabled(false);
+			idDcmPrecioMenudeoMoro.setDisabled(false);
+			idDcmPrecioRolloZapo.setDisabled(false);
+			idDcmPrecioMayoreoZapo.setDisabled(false);
+			idDcmPrecioMenudeoZapo.setDisabled(false);			
+			idDcmPrecioRolloChico.setValue(new BigDecimal("0.00"));
+			idDcmPrecioRolloCruces.setValue(new BigDecimal("0.00"));
+			idDcmPrecioRolloMoro.setValue(new BigDecimal("0.00"));
+			idDcmPrecioRolloZapo.setValue(new BigDecimal("0.00"));
+			idDcmPrecioMayoreoChico.setValue(new BigDecimal("0.00"));
+			idDcmPrecioMayoreoCruces.setValue(new BigDecimal("0.00"));
+			idDcmPrecioMayoreoMoro.setValue(new BigDecimal("0.00"));
+			idDcmPrecioMayoreoZapo.setValue(new BigDecimal("0.00"));
+			idDcmPrecioMenudeoChico.setValue(new BigDecimal("0.00"));
+			idDcmPrecioMenudeoCruces.setValue(new BigDecimal("0.00"));
+			idDcmPrecioMenudeoMoro.setValue(new BigDecimal("0.00"));
+			idDcmPrecioMenudeoZapo.setValue(new BigDecimal("0.00"));
+		}
+	}
+	
+	// Proceso de almacenamiento de producto
 	public void guardaProducto() {
 		// Primero checo que hayan puesto el nombre del nuevo producto
 		if(idTxtNombreProducto.getValue().trim() != null && idTxtNombreProducto.getValue().trim().length()>0) {

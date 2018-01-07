@@ -36,7 +36,7 @@ public class ControlListProducto extends Window{
 	
 	public void initContext(){
 		loadComponents();
-		loadItems();
+		//loadItems();
 	}
 
 	private void loadComponents(){

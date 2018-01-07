@@ -62,6 +62,14 @@
 			<artifactId>zkplus</artifactId>
 			<version>${zk.version}</version>
 		</dependency>
+		
+		<dependency>
+  			<groupId>org.zkoss.zk</groupId>
+  			<artifactId>zkex</artifactId>
+  			<version>3.5.0</version>
+		</dependency>
+		
+		
 		<!--<dependency> <groupId>org.zkoss.zk</groupId> <artifactId>zcommon</artifactId> 
 			<version>${zk.version}</version> </dependency> -->
 

@@ -8,7 +8,7 @@
 use="com.quimera.corptextiljt.zk.producto.ControlListProducto" onCreate="idWindowProducto.initContext()">
  
  
- <listbox id="idListProduct"  pagingPosition="bottom"
+ <listbox id="idListProduct" 
  sizedByContent="true" multiple="true"  width="100%"  height="100%" >
    <listhead>
    	
@@ -19,6 +19,17 @@ use="com.quimera.corptextiljt.zk.producto.ControlListProducto" onCreate="idWindo
     	<listheader width="15%" label="Precio Menudeo"  align="right"/>
    </listhead>
  </listbox>
+ 
+
+     <zscript>
+        if(!desktop.isServerPushEnabled()){
+            desktop.enableServerPush(true);
+        }
+             
+    com.quimera.corptextiljt.zk.producto.ReloadListProductWorker.asyncReloadListBox(desktop, idListProduct);
+
+    </zscript>
+ 
  
 </window>
 </zk>

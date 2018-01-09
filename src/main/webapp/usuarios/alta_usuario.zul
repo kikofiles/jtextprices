@@ -5,29 +5,31 @@ use="com.quimera.corptextiljt.zk.usuario.ControlAltaUsuario" onCreate="idWindowA
 <grid vflex="1">
 	<rows>
 		<row>
-			<label value="${altausuarioName}"  width="150px" />
+			<cell align="right"><label value="${altausuarioName}"  width="150px" /></cell>
 			<textbox id="idNombreUsuario" width="400px" maxlength="40"/>
 		</row>
 		<row>
-			<label value="${altausuarioNick}"  width="150px" />
+			<cell align="right"><label value="${altausuarioNick}"  width="150px" /></cell>
 			<textbox id="idUsuario" width="150px" maxlength="20" />
 		</row>
 		<row>
-			<label value="${altausuarioPassword}" />
+			<cell align="right"><label value="${altausuarioPassword}" /></cell>
 			<textbox type="password" id="idPasswordUser" width="150px" maxlength="20"  />
 		</row>
 		<row>
-			<label value="${altausuarioType}" />
+			<cell align="right"><label value="${altausuarioType}" /></cell>
 			<combobox id="idTipoUsuario">
+				<attribute name="onCreate">	self.setSelectedIndex(0);</attribute>
 				<comboitem label="${altausuarioTypeAdmin}" value="1"/>
 				<comboitem label="${altausuarioTypeCons}" value="2"/>
 			</combobox>
 		</row>
 		<row>
-			<label value="${altausuarioStore}"/>
+			<cell align="right"><label value="${altausuarioStore}"/></cell>
 			<combobox id="idTiendaAsignada">
+				<attribute name="onCreate">	self.setSelectedIndex(1);</attribute>
 				<comboitem label="${altausuarioStoreAll}" value="0" />
-				<comboitem label="${altausuarioStoreDowntown}" value="1"/>
+				<comboitem label="${altausuarioStoreDowntown}" value="1" />
 				<comboitem label="${altausuarioStoreChico}" value="2"/>
 				<comboitem label="${altausuarioStoreCruces}" value="5"/>
 				<comboitem label="${altausuarioStoreMoro}" value="3"/>
@@ -36,7 +38,7 @@ use="com.quimera.corptextiljt.zk.usuario.ControlAltaUsuario" onCreate="idWindowA
 		</row>
 		<row>
 			<cell align="right" > <button id="idBotonCancelar" label="${altausuarioBtnCancel}" onClick="" /></cell>
-			<cell> <button id="idBotonGuardar" label="${altausuarioBtnSave}" onClick="" /></cell>
+			<cell> <button id="idBotonGuardar" label="${altausuarioBtnSave}" onClick="idWindowAltaUsuario.guardaUsuario()" /></cell>
 		</row>
 	</rows>
 </grid>

@@ -7,6 +7,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -99,7 +100,7 @@ public class Producto implements java.io.Serializable {
 		this.estatus = estatus;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "producto")
+	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY, mappedBy = "producto")
 	public Set<Precioproducto> getPrecioproductos() {
 		return this.precioproductos;
 	}
@@ -108,7 +109,7 @@ public class Producto implements java.io.Serializable {
 		this.precioproductos = precioproductos;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "producto")
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "producto")
 	public Set<Logprecioproducto> getLogprecioproductos() {
 		return this.logprecioproductos;
 	}

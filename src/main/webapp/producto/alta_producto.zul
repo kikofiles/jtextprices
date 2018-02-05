@@ -1,7 +1,7 @@
 <?page title=${altaproductoTitle} contentType="text/html;charset=UTF-8"?>
 <zk>
-<window title="${altaproductoTitle}" border="normal" width="100%" height="100%" id="idWindowAltaProducto"
-use="com.quimera.corptextiljt.zk.producto.ControlAltaProducto" onCreate="idWindowAltaProducto.initializeContext()">
+<window title="${altaproductoTitle}" border="normal" width="100%" height="100%" id="idWindowAltaProducto" 
+   use="com.quimera.corptextiljt.zk.producto.ControlAltaProducto" onCreate="idWindowAltaProducto.initializeContext()">
 <grid vflex="1">
 	<rows>
 		<row>

@@ -7,7 +7,7 @@ import com.quimera.corptextiljt.model.Producto;
 
 public interface ServiceProducto {
 
-	public void add (Producto bean);
+	public void add (Producto bean); //este es elbueno
 	public void delete (Producto bean);
 	public List<Producto> getListProducto (Producto bean);
 	public Producto getProducto (Producto bean);

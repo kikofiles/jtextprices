@@ -19,6 +19,10 @@ import javax.persistence.Table;
 @Table(name = "acceso", catalog = "jtextpricesbd")
 public class Acceso implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer idacceso;
 	private Rol rol;
 	private Usuario usuario;

@@ -35,10 +35,11 @@
 		<location>/winError.zul</location>
 	</error-page>
 
+<!--
 	<device-config>
 	 	<device-type>ajax</device-type>
  		<server-push-class>org.zkoss.zkex.ui.impl.PollingServerPush</server-push-class>
-	</device-config>
+	</device-config>-->
 
 
 

@@ -48,16 +48,18 @@ public class ReloadListProductWorker  extends Thread{
 		
 		if (!_desktop.isServerPushEnabled())
 			_desktop.enableServerPush(true);
-		
+		int count =1;
 		try{
 			while (true){
 				Executions.activate(_desktop);
 				try{
+					System.out.println("Init ..."+count);
 					loadItems();
+					count++;
 				}finally {
 					Executions.deactivate(_desktop);
 				}
-				Threads.sleep(10000);
+				Threads.sleep(100);
 			}
 			
 		}catch (InterruptedException InEx){
@@ -76,7 +78,7 @@ public class ReloadListProductWorker  extends Thread{
 		for (Producto producto : list)
 		loadProduct (producto);	
 		//idListProduct.setMold("paging");
-		idListProduct.setPageSize(Constants.SHOW_ROWS_LIST);
+		//idListProduct.setPageSize(Constants.SHOW_ROWS_LIST);
 	}
 	private void loadProduct (Producto producto){
 		Listitem item = new Listitem ();
